@@ -11,15 +11,15 @@
     <None Remove="Resources\Fonts\Material\MaterialIconsRound-Regular.otf" />
     <None Remove="Resources\Fonts\Material\MaterialIconsSharp-Regular.otf" />
     <None Remove="Resources\Fonts\Material\MaterialIconsTwoTone-Regular.otf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-Black.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-Bold.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-ExtraBold.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-ExtraLight.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-Italic.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-Light.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-Medium.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-Regular.ttf" />
-    <None Remove="Resources\Fonts\Nunito\Nunito-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoBlack.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoBold.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoExtraBold.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoExtraLight.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoLight.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoMedium.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoRegular.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoSemiBold.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,15 +28,15 @@
     <EmbeddedResource Include="Resources\Fonts\Material\MaterialIconsRound-Regular.otf" />
     <EmbeddedResource Include="Resources\Fonts\Material\MaterialIconsSharp-Regular.otf" />
     <EmbeddedResource Include="Resources\Fonts\Material\MaterialIconsTwoTone-Regular.otf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-Black.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-Bold.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-ExtraBold.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-ExtraLight.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-Italic.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-Light.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-Medium.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-Regular.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\Nunito\Nunito-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoBlack.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoExtraBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoExtraLight.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoItalic.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoLight.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoMedium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoRegular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoSemiBold.ttf" />
   </ItemGroup>
 
   <ItemGroup>

@@ -17,15 +17,15 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("MaterialIconsTwoTone-Regular.otf", Alias = "MaterialIconsTwoTone")]
 
 //INTERFACE FONTS
-[assembly: ExportFont("Nunito-Black.ttf", Alias = "NunitoBlack")]
-[assembly: ExportFont("Nunito-Bold.ttf", Alias = "NunitoBold")]
-[assembly: ExportFont("Nunito-ExtraBold.ttf", Alias = "NunitoExtraBold")]
-[assembly: ExportFont("Nunito-ExtraLight.ttf", Alias = "NunitoExtraLight")]
-[assembly: ExportFont("Nunito-Italic.ttf", Alias = "NunitoItalic")]
-[assembly: ExportFont("Nunito-Light.ttf", Alias = "NunitoLight")]
-[assembly: ExportFont("Nunito-Medium.ttf", Alias = "NunitoMedium")]
-[assembly: ExportFont("Nunito-Regular.ttf", Alias = "NunitoRegular")]
-[assembly: ExportFont("Nunito-SemiBold.ttf", Alias = "NunitoSemiBold")]
+[assembly: ExportFont("NunitoBlack.ttf", Alias = "NunitoBlack")]
+[assembly: ExportFont("NunitoBold.ttf", Alias = "NunitoBold")]
+[assembly: ExportFont("NunitoExtraBold.ttf", Alias = "NunitoExtraBold")]
+[assembly: ExportFont("NunitoExtraLight.ttf", Alias = "NunitoExtraLight")]
+[assembly: ExportFont("NunitoItalic.ttf", Alias = "NunitoItalic")]
+[assembly: ExportFont("NunitoLight.ttf", Alias = "NunitoLight")]
+[assembly: ExportFont("NunitoMedium.ttf", Alias = "NunitoMedium")]
+[assembly: ExportFont("NunitoRegular.ttf", Alias = "NunitoRegular")]
+[assembly: ExportFont("NunitoSemiBold.ttf", Alias = "NunitoSemiBold")]
 
 
 namespace Rocket.WatchOrganizer.UI
