@@ -7,9 +7,9 @@ namespace Rocket.WatchOrganizer.UI.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Detail, NoHistory = true)]
-    public partial class AddSeriePage : MvxContentPage<AddSerieViewModel>
+    public partial class GetSeriePage : MvxContentPage<GetSerieViewModel>
     {
-        public AddSeriePage()
+        public GetSeriePage()
         {
             InitializeComponent();
         }

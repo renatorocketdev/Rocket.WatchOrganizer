@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <views:MvxContentPage
-    x:Class="Rocket.WatchOrganizer.UI.Pages.AddSeriePage"
+    x:Class="Rocket.WatchOrganizer.UI.Pages.GetSeriePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Pages"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Series;assembly=Rocket.WatchOrganizer.Core"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-    x:TypeArguments="viewModels:AddSeriesViewModel">
+    x:TypeArguments="viewModels:GetSerieViewModel">
     <NavigationPage.TitleView>
         <StackLayout>
             <Label Text="+">

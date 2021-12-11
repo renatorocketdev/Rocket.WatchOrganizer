@@ -53,11 +53,14 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\Series\GetSeriePage.xaml.cs">
-      <DependentUpon>GetSeriePage.xaml</DependentUpon>
+    <Compile Update="Pages\Series\AddSeriePage.xaml.cs">
+      <DependentUpon>AddSeriePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\AddSeriesPage.xaml.cs">
       <DependentUpon>AddSeriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Series\GetSeriePage.xaml.cs">
+      <DependentUpon>GetSeriePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\Series\WatchListsPage.xaml.cs">
       <DependentUpon>WatchListsPage.xaml</DependentUpon>
@@ -66,7 +69,7 @@
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Resources\Colors.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
+      <DependentUpon>Colors.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
