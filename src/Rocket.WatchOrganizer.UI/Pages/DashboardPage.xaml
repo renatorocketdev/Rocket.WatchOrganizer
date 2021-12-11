@@ -15,6 +15,18 @@
                 HorizontalOptions="CenterAndExpand"
                 Text="Welcome!!&#10;App scaffolded with MvxScaffolding"
                 VerticalOptions="CenterAndExpand" />
+
+            <Label Text="&#xe88a;"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="27"
+               FontFamily="MaterialIconsRegular"/>
+
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Texto com fonte Nunito" FontFamily="NunitoRegular" FontSize="15px"
+                VerticalOptions="CenterAndExpand" />
+
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>
