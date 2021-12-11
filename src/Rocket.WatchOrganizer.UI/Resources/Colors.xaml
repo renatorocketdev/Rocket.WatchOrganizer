@@ -15,4 +15,7 @@
     <Color x:Key="PrimaryTextColor">#000000</Color>
     <Color x:Key="SecondaryTextColor">#ffffff</Color>
 
+    <Color x:Key="MaterialIconColor">#25004f</Color>
+
+
 </ResourceDictionary>

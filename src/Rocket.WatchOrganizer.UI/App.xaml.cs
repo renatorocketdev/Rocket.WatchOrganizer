@@ -19,16 +19,23 @@ using Xamarin.Forms.Xaml;
 //INTERFACE FONTS
 
 [assembly: ExportFont("NunitoRegular.ttf", Alias = "Nunito-Regular")]
+[assembly: ExportFont("NunitoBlack.ttf", Alias = "Nunito-Black")]
+[assembly: ExportFont("NunitoBold.ttf", Alias = "Nunito-Bold")]
+[assembly: ExportFont("NunitoExtraBold.ttf", Alias = "Nunito-ExtraBold")]
+[assembly: ExportFont("NunitoExtraLight.ttf", Alias = "Nunito-ExtraLight")]
+[assembly: ExportFont("NunitoItalic.ttf", Alias = "Nunito-Italic")]
+[assembly: ExportFont("NunitoLight.ttf", Alias = "Nunito-Light")]
+[assembly: ExportFont("NunitoMedium.ttf", Alias = "Nunito-Medium")]
+[assembly: ExportFont("NunitoSemiBold.ttf", Alias = "Nunito-SemiBold")]
 
 /*
-[assembly: ExportFont("NunitoBlack.ttf", Alias = "NunitoBlack")]
-[assembly: ExportFont("NunitoBold.ttf", Alias = "NunitoBold")]
-[assembly: ExportFont("NunitoExtraBold.ttf", Alias = "NunitoExtraBold")]
-[assembly: ExportFont("NunitoExtraLight.ttf", Alias = "NunitoExtraLight")]
-[assembly: ExportFont("NunitoItalic.ttf", Alias = "NunitoItalic")]
-[assembly: ExportFont("NunitoLight.ttf", Alias = "NunitoLight")]
-[assembly: ExportFont("NunitoMedium.ttf", Alias = "NunitoMedium")]
-[assembly: ExportFont("NunitoSemiBold.ttf", Alias = "NunitoSemiBold")]
+[assembly: ExportFont("NunitoBold.ttf", Alias = "Nunito-Bold")]
+[assembly: ExportFont("NunitoExtraBold.ttf", Alias = "Nunito-ExtraBold")]
+[assembly: ExportFont("NunitoExtraLight.ttf", Alias = "Nunito-ExtraLight")]
+[assembly: ExportFont("NunitoItalic.ttf", Alias = "Nunito-Italic")]
+[assembly: ExportFont("NunitoLight.ttf", Alias = "Nunito-Light")]
+[assembly: ExportFont("NunitoMedium.ttf", Alias = "Nunito-Medium")]
+[assembly: ExportFont("NunitoSemiBold.ttf", Alias = "Nunito-SemiBold")]
 */
 
 

@@ -19,13 +19,13 @@
             <Label Text="&#xe88a;"
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="CenterAndExpand"
-               FontSize="27"
-               FontFamily="MaterialIconsRegular"/>
+               Style="{StaticResource LabelMaterialIconsRegular}"/>
             
             <Label
                 HorizontalOptions="CenterAndExpand"
-                Text="Texto com fonte Nunito" FontFamily="Nunito-Regular"
-                VerticalOptions="CenterAndExpand" Style="{StaticResource LabelSampleStyles}"/>
+                Text="Texto com fonte Nunito"
+                FontSize="22"
+                VerticalOptions="CenterAndExpand" Style="{StaticResource LabelNunitoLight}"/>
 
         </StackLayout>
     </ContentPage.Content>
