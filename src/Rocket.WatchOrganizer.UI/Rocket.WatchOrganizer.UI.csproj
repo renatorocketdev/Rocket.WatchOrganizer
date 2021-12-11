@@ -1,9 +1,43 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\Material\MaterialIcons-Regular.ttf" />
+    <None Remove="Resources\Fonts\Material\MaterialIconsOutlined-Regular.otf" />
+    <None Remove="Resources\Fonts\Material\MaterialIconsRound-Regular.otf" />
+    <None Remove="Resources\Fonts\Material\MaterialIconsSharp-Regular.otf" />
+    <None Remove="Resources\Fonts\Material\MaterialIconsTwoTone-Regular.otf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoBlack.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoBold.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoExtraBold.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoExtraLight.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoLight.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoMedium.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoRegular.ttf" />
+    <None Remove="Resources\Fonts\Nunito\NunitoSemiBold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Material\MaterialIcons-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Material\MaterialIconsOutlined-Regular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Material\MaterialIconsRound-Regular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Material\MaterialIconsSharp-Regular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Material\MaterialIconsTwoTone-Regular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoBlack.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoExtraBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoExtraLight.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoItalic.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoLight.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoMedium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoRegular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Nunito\NunitoSemiBold.ttf" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MvvmCross" Version="8.0.2" />
@@ -19,23 +53,35 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\HomePage.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
+    <Compile Update="Pages\Series\AddSeriePage.xaml.cs">
+      <DependentUpon>AddSeriePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\AddSeriesPage.xaml.cs">
+      <DependentUpon>AddSeriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Series\GetSeriePage.xaml.cs">
+      <DependentUpon>GetSeriePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Series\WatchListsPage.xaml.cs">
+      <DependentUpon>WatchListsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\DashboardPage.xaml.cs">
+      <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Resources\Colors.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
+      <DependentUpon>Colors.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\ContactsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\RootPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
@@ -58,6 +104,10 @@
     <None Update="Resources\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\Font Awesome\" />
   </ItemGroup>
 
 </Project>

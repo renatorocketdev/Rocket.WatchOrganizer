@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Rocket.WatchOrganizer.UI.Resources.Styles"
+                    xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Resources">
+
+    <!--Icon Fonts-->
+    <Style x:Key="LabelMaterialIconsOutlined" TargetType="Label">
+        <Setter Property="FontFamily" Value="MaterialIconsOutlined" />
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource MaterialIconColor}" />
+    </Style>
+
+    <Style x:Key="LabelMaterialIconsRegular" TargetType="Label">
+        <Setter Property="FontFamily" Value="MaterialIconsRegular" />
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource MaterialIconColor}" />
+    </Style>
+
+    <Style x:Key="LabelMaterialIconsRound" TargetType="Label">
+        <Setter Property="FontFamily" Value="MaterialIconsRound" />
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource MaterialIconColor}" />
+    </Style>
+
+    <Style x:Key="LabelMaterialIconsSharp" TargetType="Label">
+        <Setter Property="FontFamily" Value="MaterialIconsSharp" />
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource MaterialIconColor}" />
+    </Style>
+
+    <Style x:Key="LabelMaterialIconsTwoTone" TargetType="Label">
+        <Setter Property="FontFamily" Value="MaterialIconsTwoTone" />
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource MaterialIconColor}" />
+    </Style>
+
+    <!--Interface Fonts-->
+    <Style x:Key="LabelNunitoRegular" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-Regular" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoBlack" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-Black" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-Bold" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoExtraBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-ExtraBold" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoExtraLight" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-ExtraLight" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoItalic" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-Italic" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoLight" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-Light" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoMedium" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-Medium" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+    <Style x:Key="LabelNunitoSemiBold" TargetType="Label">
+        <Setter Property="FontFamily" Value="Nunito-SemiBold" />
+        <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
+    </Style>
+
+
+
+</ResourceDictionary>
