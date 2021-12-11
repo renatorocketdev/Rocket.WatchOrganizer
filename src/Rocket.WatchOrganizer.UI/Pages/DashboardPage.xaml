@@ -21,11 +21,18 @@
                HorizontalOptions="CenterAndExpand"
                FontSize="27"
                FontFamily="MaterialIconsRegular"/>
-
-            <!--<Label
+            
+            <!--
+            <Label
                 HorizontalOptions="CenterAndExpand"
                 Text="Texto com fonte Nunito" FontFamily="NunitoRegular" FontSize="15px"
-                VerticalOptions="CenterAndExpand" />-->
+                VerticalOptions="CenterAndExpand" />
+             -->
+
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Texto com fonte Nunito via style" Style="{StaticResource FontNunitoRegular}"
+                VerticalOptions="CenterAndExpand" />
 
         </StackLayout>
     </ContentPage.Content>
