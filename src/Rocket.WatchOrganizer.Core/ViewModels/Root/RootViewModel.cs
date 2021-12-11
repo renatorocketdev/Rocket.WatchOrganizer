@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using MvvmCross.Navigation;
-using Rocket.WatchOrganizer.Core.ViewModels.Home;
+using Rocket.WatchOrganizer.Core.ViewModels.Dashboard;
 using Rocket.WatchOrganizer.Core.ViewModels.Menu;
 
 namespace Rocket.WatchOrganizer.Core.ViewModels.Root
@@ -16,13 +13,12 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Root
             _navigationService = navigationService;
         }
 
-
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
 
             await _navigationService.Navigate<MenuViewModel>();
-            await _navigationService.Navigate<HomeViewModel>();
+            await _navigationService.Navigate<DashboardViewModel>();
         }
     }
 }

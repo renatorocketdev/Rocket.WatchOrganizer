@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
-using Rocket.WatchOrganizer.Core.ViewModels.Contacts;
-using Rocket.WatchOrganizer.Core.ViewModels.Home;
+using Rocket.WatchOrganizer.Core.ViewModels.Dashboard;
+using Rocket.WatchOrganizer.Core.ViewModels.WatchList;
 using Xamarin.Forms;
 
 namespace Rocket.WatchOrganizer.Core.ViewModels.Menu
@@ -16,42 +11,35 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Menu
     {
         private readonly IMvxNavigationService _navigationService;
 
-        public IMvxAsyncCommand ShowDetailPageAsyncCommand { get; private set; }
-
         public MenuViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
-            MenuItemList = new MvxObservableCollection<string>()
-            {
-                "Home",
-                "Contacts"
-            };
-
-            ShowDetailPageAsyncCommand = new MvxAsyncCommand(ShowDetailPageAsync);
         }
 
-        private ObservableCollection<string> _menuItemList;
-        public ObservableCollection<string> MenuItemList
+        public IMvxAsyncCommand ShowDashboardCommand
         {
-            get => _menuItemList;
-            set => SetProperty(ref _menuItemList, value);
+            get { return new MvxAsyncCommand(async () => await ShowDashboardAsync()); }
         }
 
-        private async Task ShowDetailPageAsync()
+        public async Task ShowDashboardAsync()
         {
-            // Implement your logic here.
-            switch (SelectedMenuItem)
-            {
-                case "Home":
-                    await _navigationService.Navigate<HomeViewModel>();
-                    break;
-                case "Contacts":
-                    await _navigationService.Navigate<ContactsViewModel>();
-                    break;
-                default:
-                    break;
-            }
+            await _navigationService.Navigate<DashboardViewModel>();
+            MenuControl();
+        }
 
+        public IMvxAsyncCommand ShowMoviesCommand
+        {
+            get { return new MvxAsyncCommand(async () => await ShowMoviesAsync()); }
+        }
+
+        public async Task ShowMoviesAsync()
+        {
+            await _navigationService.Navigate<WatchListViewModel>();
+            MenuControl();
+        }
+
+        private void MenuControl()
+        {
             if (Application.Current.MainPage is FlyoutPage masterDetailPage)
             {
                 masterDetailPage.IsPresented = false;
@@ -61,13 +49,6 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Menu
             {
                 nestedMasterDetail.IsPresented = false;
             }
-        }
-
-        private string _selectedMenuItem;
-        public string SelectedMenuItem
-        {
-            get => _selectedMenuItem;
-            set => SetProperty(ref _selectedMenuItem, value);
         }
     }
 }
