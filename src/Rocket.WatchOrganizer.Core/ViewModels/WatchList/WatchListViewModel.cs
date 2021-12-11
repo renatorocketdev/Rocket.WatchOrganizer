@@ -31,13 +31,13 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.WatchList
 
         #region Properties
 
-        private List<Serie> _Series;
+        private List<Serie> _series;
         public List<Serie> Series
         {
-            get => _Series;
+            get => _series;
             set
             {
-                _Series = value;
+                _series = value;
                 RaisePropertyChanged(() => Series);
             }
         }
