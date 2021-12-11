@@ -7,5 +7,6 @@ namespace Rocket.WatchOrganizer.Core.ViewModels
 {
     public abstract class BaseViewModel : MvxViewModel
     {
+      
     }
 }

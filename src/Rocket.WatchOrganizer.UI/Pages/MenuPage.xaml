@@ -45,7 +45,7 @@
                     <ViewCell mvx:Bi.nd="Tapped ShowDashboardCommand">
                         <Label Text="Dashboard" />
                     </ViewCell>
-                    <ViewCell mvx:Bi.nd="Tapped ShowMoviesCommand">
+                    <ViewCell mvx:Bi.nd="Tapped ShowSeriesCommand">
                         <Label Text="Séries/Filmes/Animes" />
                     </ViewCell>
                 </TableSection>
