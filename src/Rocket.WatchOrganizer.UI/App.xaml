@@ -10,14 +10,10 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <resources:Colors />
-                
-                
+
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
-        <Style x:Key="FontNunitoRegular" TargetType="Label" ApplyToDerivedTypes="True">
-            <Setter Property="FontFamily" Value="{StaticResource NunitoRegular}" />
-        </Style>
 
     </Application.Resources>
 </Application>

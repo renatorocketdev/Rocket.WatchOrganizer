@@ -17,6 +17,10 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("MaterialIconsTwoTone-Regular.otf", Alias = "MaterialIconsTwoTone")]
 
 //INTERFACE FONTS
+
+[assembly: ExportFont("NunitoRegular.ttf", Alias = "Nunito-Regular")]
+
+/*
 [assembly: ExportFont("NunitoBlack.ttf", Alias = "NunitoBlack")]
 [assembly: ExportFont("NunitoBold.ttf", Alias = "NunitoBold")]
 [assembly: ExportFont("NunitoExtraBold.ttf", Alias = "NunitoExtraBold")]
@@ -24,8 +28,8 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("NunitoItalic.ttf", Alias = "NunitoItalic")]
 [assembly: ExportFont("NunitoLight.ttf", Alias = "NunitoLight")]
 [assembly: ExportFont("NunitoMedium.ttf", Alias = "NunitoMedium")]
-[assembly: ExportFont("NunitoRegular.ttf", Alias = "NunitoRegular")]
 [assembly: ExportFont("NunitoSemiBold.ttf", Alias = "NunitoSemiBold")]
+*/
 
 
 namespace Rocket.WatchOrganizer.UI
