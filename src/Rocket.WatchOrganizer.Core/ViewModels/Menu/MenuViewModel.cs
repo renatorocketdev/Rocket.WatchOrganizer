@@ -27,12 +27,12 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Menu
             MenuControl();
         }
 
-        public IMvxAsyncCommand ShowMoviesCommand
+        public IMvxAsyncCommand ShowSeriesCommand
         {
-            get { return new MvxAsyncCommand(async () => await ShowMoviesAsync()); }
+            get { return new MvxAsyncCommand(async () => await ShowSeriesAsync()); }
         }
 
-        public async Task ShowMoviesAsync()
+        public async Task ShowSeriesAsync()
         {
             await _navigationService.Navigate<WatchListViewModel>();
             MenuControl();

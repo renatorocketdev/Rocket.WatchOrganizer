@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -19,10 +19,13 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\AddMoviesPage.xaml.cs">
-      <DependentUpon>AddMoviesPage.xaml</DependentUpon>
+    <Compile Update="Pages\Series\GetSeriePage.xaml.cs">
+      <DependentUpon>GetSeriePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\WatchListsPage.xaml.cs">
+    <Compile Update="Pages\AddSeriesPage.xaml.cs">
+      <DependentUpon>AddSeriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Series\WatchListsPage.xaml.cs">
       <DependentUpon>WatchListsPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\DashboardPage.xaml.cs">

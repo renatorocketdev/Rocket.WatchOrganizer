@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <views:MvxContentPage
-    x:Class="Rocket.WatchOrganizer.UI.Pages.WatchListPage"
+    x:Class="Rocket.WatchOrganizer.UI.Pages.AddSeriePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Pages"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-    xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.WatchList;assembly=Rocket.WatchOrganizer.Core"
+    xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Series;assembly=Rocket.WatchOrganizer.Core"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-    x:TypeArguments="viewModels:WatchListViewModel">
+    x:TypeArguments="viewModels:AddSeriesViewModel">
     <NavigationPage.TitleView>
         <StackLayout>
             <Label Text="+">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer mvx:Bi.nd="Tapped ShowAddMoviesCommand"/>
+                    <TapGestureRecognizer mvx:Bi.nd=""/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
@@ -22,7 +22,7 @@
         <StackLayout>
             <Label
                 HorizontalOptions="CenterAndExpand"
-                Text="LISTA DE SERIES"
+                Text="CADASTRO"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
