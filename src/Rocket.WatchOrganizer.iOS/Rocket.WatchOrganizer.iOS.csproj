@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{04EEB06D-DE02-4F9D-9671-8A33BB12BFF4}</ProjectGuid>
+    <ProjectGuid>{B6500A31-160E-416A-91EB-C5A8D6FF9829}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>Rocket.WatchOrganizer.iOS</RootNamespace>
@@ -117,17 +117,20 @@
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.8.116</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.7.0</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>5.0.0.2125</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rocket.WatchOrganizer.Core\Rocket.WatchOrganizer.Core.csproj">
-      <Project>{9DD73B95-1631-4798-9CB5-CB44CDAF9A2F}</Project>
+      <Project>{60A2F218-9CFA-4EAD-874A-D8E08346E1CF}</Project>
       <Name>Rocket.WatchOrganizer.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Rocket.WatchOrganizer.UI\Rocket.WatchOrganizer.UI.csproj">
-      <Project>{86FC81D8-B087-4A95-A3F8-6C33D5E93214}</Project>
+      <Project>{54626F07-FC0E-40AB-A760-2C1D8289EBAD}</Project>
       <Name>Rocket.WatchOrganizer.UI</Name>
     </ProjectReference>
   </ItemGroup>
@@ -182,8 +185,6 @@
     <BundleResource Include="Resources\launch_image.png" />
     <BundleResource Include="Resources\launch_image%402x.png" />
     <BundleResource Include="Resources\launch_image%403x.png" />
-    <BundleResource Include="Resources\hamburger%402x.png" />
-    <BundleResource Include="Resources\hamburger.png" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\Icon-1024.png">

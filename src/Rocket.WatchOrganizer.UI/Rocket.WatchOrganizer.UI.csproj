@@ -53,32 +53,26 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\Series\AddSeriePage.xaml.cs">
-      <DependentUpon>AddSeriePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\AddSeriesPage.xaml.cs">
-      <DependentUpon>AddSeriesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\Series\GetSeriePage.xaml.cs">
-      <DependentUpon>GetSeriePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\Series\WatchListsPage.xaml.cs">
-      <DependentUpon>WatchListsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\DashboardPage.xaml.cs">
-      <DependentUpon>DashboardPage.xaml</DependentUpon>
+    <Compile Update="Pages\HomePage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Resources\Colors.xaml.cs">
-      <DependentUpon>Colors.xaml</DependentUpon>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Styles.xaml.cs">
+      <DependentUpon>Styles.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\MenuPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <EmbeddedResource Update="Pages\AddSeriePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RootPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <EmbeddedResource Update="Pages\GetSeriePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\WatchListsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -89,25 +83,12 @@
     <None Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Pages\ContactsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <None Update="Pages\HomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Pages\MenuPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Pages\RootPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Resources\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\Fonts\Font Awesome\" />
   </ItemGroup>
 
 </Project>
