@@ -81,6 +81,17 @@
         <Setter Property="TextColor" Value="{x:DynamicResource PrimaryColor}" />
     </Style>
 
-
+    <!--#region ToolKit-->
+    <Style x:Key="ButtonTransparent" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#EEE" />
+        <Setter Property="BorderColor" Value="#EEE" />
+        <Setter Property="BorderWidth" Value="0.5" />
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="FontFamily" Value="Nunito-Bold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="#25004f" />
+    </Style>
+    <!--#endregion-->
 
 </ResourceDictionary>
