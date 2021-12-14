@@ -123,6 +123,9 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>5.0.0.2125</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.PancakeView">
+      <Version>2.3.0.759</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rocket.WatchOrganizer.Core\Rocket.WatchOrganizer.Core.csproj">

@@ -7,69 +7,319 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Pages"
+    
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Home;assembly=Rocket.WatchOrganizer.Core"
-    Title="Main page" BackgroundColor="#000">
+    Title="Main page" BackgroundColor="#FFFFFF">
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="500"/>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <AbsoluteLayout>
-                        <Image Source="https://images-na.ssl-images-amazon.com/images/I/71Pfj+orjFL.jpg" Aspect="AspectFill" 
-                           AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
-                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Start"
-                                    BackgroundColor="#99000000">
-                            <StackLayout Orientation="Horizontal" Padding="15" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" >
-                                <Label Text="Séries" TextColor="#FFF" HorizontalOptions="CenterAndExpand"/>
-                                <Label Text="Animes" TextColor="#FFF" HorizontalOptions="CenterAndExpand"/>
-                            </StackLayout>
-                        </AbsoluteLayout>
 
-                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="End"
-                                    BackgroundColor="#99000000">
-                            <StackLayout Orientation="Horizontal" Padding="15" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" >
-                                <Label Text="Peaky Blinders" TextColor="#FFF" HorizontalOptions="CenterAndExpand"/>
+                    <yummy:PancakeView CornerRadius="0,0,20,20">
+                        <yummy:PancakeView.Border>
+                            <yummy:Border Color="#dcdcdc" Thickness="1" />
+                        </yummy:PancakeView.Border>
+
+                        <StackLayout BackgroundColor="#f5f5f5">
+                            <StackLayout Grid.Row="0" Margin="20,10,10,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Grid.ColumnSpan="2" 
+                                           Style="{StaticResource LabelNunitoBlack}" 
+                                           FontSize="27" Text="Hello,&#x0a;welcome!"/>
+
+                                    <Label Grid.Column="2" Margin="0,10,0,0" 
+                                           Style="{StaticResource LabelMaterialIconsRegular}" 
+                                           FontSize="39" TextColor="#4c555a" Text="&#xe9e6;"/>
+                                </Grid>
                             </StackLayout>
-                        </AbsoluteLayout>
-                    </AbsoluteLayout>
+
+                            <BoxView Style="{StaticResource Divider}" Margin="0"
+                               HeightRequest="3"
+                               Color="#25004f"/>
+
+                            <StackLayout Grid.Row="1" Grid.RowSpan="2" BackgroundColor="#f1f1f1">
+                                <Grid Margin="15">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- CARD 1-->
+                                    <StackLayout Grid.Row="0" Grid.Column="0">
+                                        <yummy:PancakeView CornerRadius="20" HeightRequest="150" BackgroundColor="#EEE">
+                                            <yummy:PancakeView.Border>
+                                                <yummy:Border Color="#CCC" Thickness="2" />
+                                            </yummy:PancakeView.Border>
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="0" Grid.ColumnSpan="2" 
+                                                       Style="{StaticResource LabelHeaderCard}"
+                                                       Text="Info 1 teste"/>
+                                            </Grid>
+                                        </yummy:PancakeView>
+                                    </StackLayout>
+
+                                    <!-- CARD 2-->
+                                    <StackLayout Grid.Row="0" Grid.Column="1">
+                                        <yummy:PancakeView CornerRadius="20" HeightRequest="150" BackgroundColor="#EEE">
+                                            <yummy:PancakeView.Border>
+                                                <yummy:Border Color="#CCC" Thickness="2" />
+                                            </yummy:PancakeView.Border>
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="0" Grid.ColumnSpan="2" 
+                                                       Style="{StaticResource LabelHeaderCard}"
+                                                       Text="Info 2 teste"/>
+                                            </Grid>
+                                        </yummy:PancakeView>
+                                    </StackLayout>
+
+                                    <!-- CARD 3-->
+                                    <StackLayout Grid.Row="1" Grid.Column="0">
+                                        <yummy:PancakeView CornerRadius="20" HeightRequest="150" BackgroundColor="#EEE">
+                                            <yummy:PancakeView.Border>
+                                                <yummy:Border Color="#CCC" Thickness="2" />
+                                            </yummy:PancakeView.Border>
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="0" Grid.ColumnSpan="2" 
+                                                       Style="{StaticResource LabelHeaderCard}"
+                                                       Text="Info 3 teste"/>
+                                            </Grid>
+                                        </yummy:PancakeView>
+                                    </StackLayout>
+
+                                    <!-- CARD 4-->
+                                    <StackLayout Grid.Row="1" Grid.Column="1">
+                                        <yummy:PancakeView CornerRadius="20" HeightRequest="150" BackgroundColor="#EEE">
+                                            <yummy:PancakeView.Border>
+                                                <yummy:Border Color="#CCC" Thickness="2" />
+                                            </yummy:PancakeView.Border>
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="0" Grid.ColumnSpan="2" 
+                                                       Style="{StaticResource LabelHeaderCard}"
+                                                       Text="Info 4 teste"/>
+                                            </Grid>
+                                        </yummy:PancakeView>
+                                    </StackLayout>
+                                </Grid>
+
+                            </StackLayout>
+
+                            <BoxView Style="{StaticResource Divider}" Margin="0"
+                               HeightRequest="8"
+                               Color="#25004f"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
 
                     <StackLayout Grid.Row="1" Spacing="0">
-                        <Label Text="Séries" TextColor="#FFF" Margin="10"/>
-                        <CarouselView  ItemsSource="{Binding Series}" HeightRequest="200">
-                            <CarouselView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout>
-                                        <Image Source="{Binding Banner}" Aspect="AspectFill" VerticalOptions="Center"/>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </CarouselView.ItemTemplate>
-                        </CarouselView>
+                        <!--#region Series -->
+                        <Grid ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Label Text="Animes" TextColor="#FFF" Margin="10, 0, 0, 10"/>
-                        <CarouselView  ItemsSource="{Binding Animes}" HeightRequest="200">
-                            <CarouselView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout>
-                                        <Image Source="{Binding Banner}" Aspect="AspectFill" VerticalOptions="Center"/>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </CarouselView.ItemTemplate>
-                        </CarouselView>
+                            <Label Grid.Row="0" Grid.Column="0" Text="Séries" Margin="20,10,0,10" Style="{StaticResource LabelBold}" FontSize="16"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Ver todos" Margin="0,10,20,0" Style="{StaticResource LabelBold}" TextColor="#25004f" FontSize="13">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer mvx:Bi.nd="Tapped ShowWatchListAsync"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
 
-                        <Label Text="Séries Assistidas" TextColor="#FFF" Margin="10, 0, 0, 10"/>
-                        <CarouselView  ItemsSource="{Binding Series}" HeightRequest="200">
-                            <CarouselView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout>
-                                        <Image Source="{Binding Banner}" Aspect="AspectFill" VerticalOptions="Center"/>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </CarouselView.ItemTemplate>
-                        </CarouselView>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
+                            <CarouselView Grid.Row="0" Grid.ColumnSpan="2" ItemsSource="{Binding Series}" HeightRequest="200" IndicatorView="indicatorViewSerie">
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout>
+                                            <Image Source="{Binding Banner}" Aspect="AspectFill" VerticalOptions="Center"/>
+                                            
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+
+                            <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="2" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Start" HorizontalOptions="Fill"
+                                    BackgroundColor="#99000000" HeightRequest="30">
+                                <StackLayout Orientation="Horizontal" Padding="0" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" >
+                                    <Label Text="Título" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" Style="{StaticResource LabelRegular}" FontSize="16"/>
+                                </StackLayout>
+                            </AbsoluteLayout>
+
+                            <IndicatorView x:Name="indicatorViewSerie" Grid.Row="0" Grid.ColumnSpan="2" 
+                                           AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                                           AbsoluteLayout.LayoutFlags="All" 
+                                           Style="{StaticResource IndicatorsStyle}"/>
+                        </Grid>
+
+                        <!--#endregion-->
+
+                        <BoxView Style="{StaticResource Divider}"/>
+
+                        <!--#region Animes-->
+                        <Grid ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Animes" Margin="20,10,0,10" Style="{StaticResource LabelRegular}" TextColor="#4c555a" FontFamily="Nunito-Bold" FontSize="16"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Ver todos" Margin="0,10,20,0" Style="{StaticResource LabelRegular}" TextColor="#25004f" FontFamily="Nunito-Bold" FontSize="13"/>
+
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <CarouselView Grid.Row="0" Grid.ColumnSpan="2" ItemsSource="{Binding Animes}" HeightRequest="200" IndicatorView="indicatorViewAnime">
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout>
+                                            <Image Source="{Binding Banner}" Aspect="AspectFill" VerticalOptions="Center"/>
+
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+
+                            <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="2" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Start" HorizontalOptions="Fill"
+                                    BackgroundColor="#99000000" HeightRequest="30">
+                                <StackLayout Orientation="Horizontal" Padding="0" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" >
+                                    <Label Text="Título" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" Style="{StaticResource LabelRegular}" FontSize="16"/>
+                                </StackLayout>
+                            </AbsoluteLayout>
+
+                            <IndicatorView x:Name="indicatorViewAnime" Grid.Row="0" Grid.ColumnSpan="2" 
+                                           AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                                           AbsoluteLayout.LayoutFlags="All" 
+                                           Style="{StaticResource IndicatorsStyle}"/>
+                        </Grid>
+                        <!--#endregion-->
+
+                        <BoxView Style="{StaticResource Divider}"/>
+
+                        <!--#region Assistido-->
+                        <Grid ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Series Assistidas por você" 
+                                   Margin="20,10,0,10" Style="{StaticResource LabelBold}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Ver todos" 
+                                   Margin="0,10,20,0" Style="{StaticResource LabelBold}" 
+                                   TextColor="#25004f" FontSize="13"/>
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <CarouselView Grid.Row="0" Grid.ColumnSpan="2" ItemsSource="{Binding Series}" HeightRequest="200" IndicatorView="indicatorViewAssistido">
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout>
+                                            <Image Source="{Binding Banner}" Aspect="AspectFill" VerticalOptions="Center"/>
+
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+
+                            <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="2" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Start" HorizontalOptions="Fill"
+                                    BackgroundColor="#99000000" HeightRequest="30">
+                                <StackLayout Orientation="Horizontal" Padding="0" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" >
+                                    <Label Text="Título" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" Style="{StaticResource LabelRegular}"/>
+                                </StackLayout>
+                            </AbsoluteLayout>
+
+                            <IndicatorView x:Name="indicatorViewAssistido" Grid.Row="0" Grid.ColumnSpan="2" 
+                                           AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                                           AbsoluteLayout.LayoutFlags="All" 
+                                           Style="{StaticResource IndicatorsStyle}"/>
+                        </Grid>
+                        <!--#endregion-->
                     </StackLayout>
                 </Grid>
             </StackLayout>
