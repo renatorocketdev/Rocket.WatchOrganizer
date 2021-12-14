@@ -9,22 +9,16 @@ using Xamarin.Essentials;
 
 namespace Rocket.WatchOrganizer.Core.Service
 {
-    public class SerieService
+    public class SerieService : BaseService
     {
-        private SQLiteAsyncConnection _db;
-
-        public SerieService()
+        public SerieService() : base()
         {
-            if (_db != null)
-                return;
 
-            var database = Path.Combine(FileSystem.AppDataDirectory, "organizer.db");
-            _db = new SQLiteAsyncConnection(database);
         }
 
-        private async Task InitAsync()
+        public async Task InitAsync()
         {
-            await _db.CreateTableAsync<Serie>();
+            await Db.CreateTableAsync<Serie>();
         }
 
         public async Task<int> AddSerieAsync()
@@ -38,7 +32,7 @@ namespace Rocket.WatchOrganizer.Core.Service
                 Icone = "https://infinitasvidas.files.wordpress.com/2020/06/peaky-blinders.png?w=640"
             };
 
-            return await _db.InsertAsync(Serie);
+            return await Db.InsertAsync(Serie);
         }
 
         public async Task<List<Serie>> GetSeriesAsync()
@@ -46,7 +40,7 @@ namespace Rocket.WatchOrganizer.Core.Service
             await InitAsync();
             await AddSerieAsync();
 
-            return await _db.Table<Serie>().ToListAsync();
+            return await Db.Table<Serie>().ToListAsync();
         }
     }
 }
