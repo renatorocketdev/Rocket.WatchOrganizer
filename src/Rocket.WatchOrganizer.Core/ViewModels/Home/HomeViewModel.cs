@@ -56,7 +56,7 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Home
                 },
                 new Serie
                 {
-                    Banner = "https://cdn.pensador.com/img/authors/na/ru/naruto-l.jpg",
+                    Banner = "https://s2.glbimg.com/p9GepraCZ0LgIBefjY0xuQOWG5c=/696x390/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/z/g/IZkGgJREC83BODB6smIA/dragon-ball-z-kakarot-techtudo.jpg",
                 },
                 new Serie
                 {

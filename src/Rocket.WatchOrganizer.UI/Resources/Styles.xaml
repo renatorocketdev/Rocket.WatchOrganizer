@@ -100,10 +100,10 @@
     </Style>
 
     <Style x:Key="LabelHeaderCard" TargetType="Label">
-        <Setter Property="HorizontalTextAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="0,5,0,0"/>
-        <Setter Property="FontFamily" Value="Nunito-Black"/>
-        <Setter Property="FontSize" Value="19"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="FontFamily" Value="Nunito-Bold"/>
+        <Setter Property="FontSize" Value="17"/>
         <Setter Property="TextColor" Value="#4c555a"/>
     </Style>
 
