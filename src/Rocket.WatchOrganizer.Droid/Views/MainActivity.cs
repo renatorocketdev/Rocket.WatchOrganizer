@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using FFImageLoading.Forms.Platform;
 using MvvmCross.Forms.Platforms.Android.Views;
 using Rocket.WatchOrganizer.Core.ViewModels.Main;
 using Xamarin.Forms;
@@ -24,7 +25,9 @@ namespace Rocket.WatchOrganizer.Droid
             
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            CachedImageRenderer.Init(true);
             base.OnCreate(bundle);
+
         }
     }
 }

@@ -7,36 +7,104 @@
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.WatchList;assembly=Rocket.WatchOrganizer.Core"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:TypeArguments="viewModels:WatchListViewModel">
+    
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="#333" HeightRequest="50">
-                <Label Text="Adicionar">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer mvx:Bi.nd="Tapped ShowAddSeriesCommand"/>
-                    </Label.GestureRecognizers>
-                </Label>
-            </StackLayout>            
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="120"/>
+                    
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--Welcome Bar-->
+                <yummy:PancakeView Grid.Row="0" Grid.RowSpan="2" CornerRadius="0,0,5,5" BackgroundGradientStartPoint="0,0" BackgroundGradientEndPoint="1,0">
+                    <yummy:PancakeView.BackgroundGradientStops>
+                        <yummy:GradientStopCollection>
+                            <yummy:GradientStop Color="#7c4ed9" Offset="0.0" />
+                            <yummy:GradientStop Color="#672be0" Offset="0.4" />
+                            <yummy:GradientStop Color="#5512de" Offset="0.8" />
+                            <yummy:GradientStop Color="#4A00E0" Offset="1.0" />
+                        </yummy:GradientStopCollection>
+                    </yummy:PancakeView.BackgroundGradientStops>
 
-            <ListView 
-                x:Name="ItemsListView" 
-                CachingStrategy="RecycleElement"
-                ItemsSource="{Binding Series}"
-                HasUnevenRows="True"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                SeparatorVisibility="None">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Image Source="{Binding Banner}" Aspect="AspectFit"/>
-                                <Label Text="{Binding Titulo}"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                    <StackLayout>
+                        <StackLayout VerticalOptions="StartAndExpand">
+                            <Grid Margin="20,10,0,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Margin="0,0,0,0" 
+                                           Style="{StaticResource LabelMaterialIconsRegular}" 
+                                           FontSize="19" TextColor="#fff" Text="&#xe408;" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+
+                                <Label Grid.Column="0" Grid.ColumnSpan="2" 
+                                           Style="{StaticResource LabelNunitoBlack}" 
+                                           FontSize="17" TextColor="#fff" Text="Minhas Séries" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                                <Label Grid.Column="2" Margin="0,0,0,0" 
+                                           Style="{StaticResource LabelMaterialIconsRegular}" 
+                                           FontSize="19" TextColor="#fff" Text="&#xe8b8;" VerticalTextAlignment="Center"/>
+                            </Grid>
+
+                            <Entry Grid.Row="1" Margin="20,10,20,10" Placeholder="Search..." PlaceholderColor="#EEE"/>
+                        </StackLayout>
+                    </StackLayout>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView  Grid.Row="1" Margin="20,30,20,0" 
+                                    Grid.RowSpan="2" CornerRadius="10" 
+                                    BackgroundColor="#EEE">
+
+                    <flv:FlowListView x:Name="ItemsListView"                                  
+                                  FlowColumnCount="2" FlowTotalRecords="5"
+                                  SeparatorVisibility="None" 
+                                  HasUnevenRows="false"
+                                  RowHeight="120"     
+                                  FlowColumnMinWidth="110"
+                                  HorizontalOptions="CenterAndExpand"
+                                  FlowItemsSource="{Binding Series}" BackgroundColor="#EEE">
+
+                        <flv:FlowListView.FlowColumnTemplate>
+                            <DataTemplate>
+                                <Grid Padding="5" HorizontalOptions="Center">
+                                    <yummy:PancakeView CornerRadius="10">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <ffimageloading:CachedImage Grid.Column="0" WidthRequest="150" HeightRequest="150"
+							                    DownsampleUseDipUnits="True" 
+							                    LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
+							                    Source="{Binding Banner}"/>
+
+                                            <Label x:Name="Label" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Start"
+							                    BackgroundColor="#4A00E0" TextColor="Silver" Opacity="0.5" Text="{Binding Titulo}"/>
+                                        </Grid>
+                                    </yummy:PancakeView>
+                                </Grid>
+                            </DataTemplate>
+                        </flv:FlowListView.FlowColumnTemplate>
+
+                    </flv:FlowListView>
+
+                </yummy:PancakeView>
+            </Grid>
         </StackLayout>
+        
     </ContentPage.Content>
 </views:MvxContentPage>
