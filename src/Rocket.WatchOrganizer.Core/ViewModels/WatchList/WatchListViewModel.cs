@@ -31,13 +31,13 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.WatchList
 
         #region Properties
 
-        private List<Serie> _Series;
+        private List<Serie> _series;
         public List<Serie> Series
         {
-            get => _Series;
+            get => _series;
             set
             {
-                _Series = value;
+                _series = value;
                 RaisePropertyChanged(() => Series);
             }
         }
@@ -45,10 +45,16 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.WatchList
         #endregion
 
         public IMvxAsyncCommand ShowAddSeriesCommand => new MvxAsyncCommand(async () => await ShowAddSeriesAsync());
+        public IMvxAsyncCommand BackNavigation => new MvxAsyncCommand(async () => await BackNavigationAsync());
 
         public async Task ShowAddSeriesAsync()
         {
             await _navigationService.Navigate<AddSerieViewModel>();
+        }
+
+        public async Task BackNavigationAsync()
+        {
+            await _navigationService.Close(this);
         }
 
         public async Task GetWatchListAsync()

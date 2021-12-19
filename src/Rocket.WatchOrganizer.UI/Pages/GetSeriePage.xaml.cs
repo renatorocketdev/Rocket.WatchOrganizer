@@ -1,15 +1,15 @@
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
-using Rocket.WatchOrganizer.Core.ViewModels.WatchList;
+using Rocket.WatchOrganizer.Core.ViewModels.Series;
 using Xamarin.Forms.Xaml;
 
 namespace Rocket.WatchOrganizer.UI.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Detail, NoHistory = true)]
-    public partial class WatchListPage : MvxContentPage<WatchListViewModel>
+    [MvxContentPagePresentation(WrapInNavigationPage = false)]
+    public partial class GetSeriePage : MvxContentPage<GetSerieViewModel>
     {
-        public WatchListPage()
+        public GetSeriePage()
         {
             InitializeComponent();
         }

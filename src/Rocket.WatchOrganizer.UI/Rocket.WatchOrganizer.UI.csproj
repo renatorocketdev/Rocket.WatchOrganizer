@@ -40,9 +40,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="MvvmCross" Version="8.0.2" />
     <PackageReference Include="MvvmCross.Forms" Version="8.0.2" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+    <PackageReference Include="Xamarin.Forms.InputKit" Version="3.7.2" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
   </ItemGroup>
   
   <ItemGroup>
@@ -53,31 +58,28 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\Series\AddSeriePage.xaml.cs">
-      <DependentUpon>AddSeriePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\AddSeriesPage.xaml.cs">
-      <DependentUpon>AddSeriesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\Series\GetSeriePage.xaml.cs">
-      <DependentUpon>GetSeriePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\Series\WatchListsPage.xaml.cs">
-      <DependentUpon>WatchListsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\DashboardPage.xaml.cs">
-      <DependentUpon>DashboardPage.xaml</DependentUpon>
+    <Compile Update="Pages\HomePage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Resources\Colors.xaml.cs">
-      <DependentUpon>Colors.xaml</DependentUpon>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Styles.xaml.cs">
+      <DependentUpon>Styles.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\MenuPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <EmbeddedResource Update="Pages\AddSeriePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RootPage.xaml">
+    <EmbeddedResource Update="Pages\GetSeriePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\WatchListsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\LightTheme.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Styles.xaml">
@@ -89,25 +91,12 @@
     <None Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Pages\ContactsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <None Update="Pages\HomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Pages\MenuPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Pages\RootPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Resources\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\Fonts\Font Awesome\" />
   </ItemGroup>
 
 </Project>

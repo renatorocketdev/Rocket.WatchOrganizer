@@ -6,6 +6,8 @@
     xmlns:resources="clr-namespace:Rocket.WatchOrganizer.UI.Resources">
     <Application.Resources>
 
+        <ResourceDictionary Source="Resources/LightTheme.xaml" />
+
         <!--  Application resource dictionary  -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

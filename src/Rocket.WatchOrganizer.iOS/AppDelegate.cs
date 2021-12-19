@@ -1,4 +1,5 @@
-﻿using Foundation;
+using FFImageLoading.Forms.Platform;
+using Foundation;
 using MvvmCross.Forms.Platforms.Ios.Core;
 
 namespace Rocket.WatchOrganizer.iOS

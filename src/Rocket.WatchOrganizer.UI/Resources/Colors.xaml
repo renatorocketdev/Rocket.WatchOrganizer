@@ -5,6 +5,7 @@
                     xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Resources">
 
     <Color x:Key="PrimaryColor">#4c555a</Color>
+
     <Color x:Key="PrimaryDarkColor">#242c31</Color>
     <Color x:Key="PrimaryLightColor">#788187</Color>
 
