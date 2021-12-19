@@ -5,10 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Pages"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.WatchList;assembly=Rocket.WatchOrganizer.Core"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     
-    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:TypeArguments="viewModels:WatchListViewModel">
     
     <ContentPage.Content>
@@ -45,17 +48,13 @@
                                            Style="{StaticResource LabelNunitoBlack}" 
                                            FontSize="17" TextColor="#fff" Text="Minhas Séries" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
-                            <Button Grid.Column="2" FontFamily="MaterialIconsOutlined" Text="&#xe145;" 
-                                    Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" BackgroundColor="#11100000"
-                                    />
+                            <Button Grid.Column="2" FontFamily="MaterialIconsRegular" Text="&#xe145;" 
+                                    Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
+                                    BackgroundColor="#11100000" Command="{Binding ShowAddSeriesCommand}"/>
 
-                            <Button Grid.Column="0" FontFamily="MaterialIconsOutlined" Text="&#xe408;" 
-                                    Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" BackgroundColor="#11100000"
-                                    >
-                                <Button.GestureRecognizers>
-                                    <TapGestureRecognizer mvx:Bi.nd="Tapped BackNavigation"/>
-                                </Button.GestureRecognizers>
-                            </Button>
+                            <Button Grid.Column="0" FontFamily="MaterialIconsRegular" Text="&#xe88a;" 
+                                    Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
+                                    BackgroundColor="#11100000" Command="{Binding BackNavigationCommand}"/>
                         </Grid>
 
                     </StackLayout>
@@ -71,6 +70,7 @@
                                   SeparatorVisibility="None" 
                                   HasUnevenRows="false"
                                   RowHeight="180"     
+                                  FlowUseAbsoluteLayoutInternally="True" 
                                   FlowColumnMinWidth="160"
                                   HorizontalOptions="CenterAndExpand"
                                   FlowItemsSource="{Binding Series}" BackgroundColor="#EEE">
