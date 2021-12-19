@@ -53,6 +53,15 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\WatchedStep3Page.xaml.cs">
+      <DependentUpon>WatchedStep3Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\WatchedStep2Page.xaml.cs">
+      <DependentUpon>WatchedStep2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\WatchedStep1Page.xaml.cs">
+      <DependentUpon>WatchedStep1Page.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\HomePage.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -65,12 +74,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\AddSeriePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\GetSeriePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\WatchListsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
