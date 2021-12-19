@@ -4,7 +4,7 @@ using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using Rocket.WatchOrganizer.Core.Models;
 using Rocket.WatchOrganizer.Core.Service;
-using Rocket.WatchOrganizer.Core.ViewModels.Series;
+using Rocket.WatchOrganizer.Core.ViewModels.Watched;
 
 namespace Rocket.WatchOrganizer.Core.ViewModels.WatchList
 {
@@ -49,7 +49,7 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.WatchList
 
         public async Task ShowAddSeriesAsync()
         {
-            await _navigationService.Navigate<AddSerieViewModel>();
+            await _navigationService.Navigate<WatchedStep1ViewModel>();
         }
 
         public async Task BackNavigationAsync()
