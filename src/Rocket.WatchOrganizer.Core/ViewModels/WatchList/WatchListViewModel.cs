@@ -45,10 +45,16 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.WatchList
         #endregion
 
         public IMvxAsyncCommand ShowAddSeriesCommand => new MvxAsyncCommand(async () => await ShowAddSeriesAsync());
+        public IMvxAsyncCommand BackNavigation => new MvxAsyncCommand(async () => await BackNavigationAsync());
 
         public async Task ShowAddSeriesAsync()
         {
             await _navigationService.Navigate<WatchedStep1ViewModel>();
+        }
+
+        public async Task BackNavigationAsync()
+        {
+            await _navigationService.Close(this);
         }
 
         public async Task GetWatchListAsync()
