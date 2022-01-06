@@ -4,16 +4,14 @@
     x:Class="Rocket.WatchOrganizer.UI.Pages.WatchedStep1Page"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
-    
-    xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Pages"
-    xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core" 
-    
-    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
-    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" 
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions" xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit" xmlns:richtexteditor="clr-namespace:Syncfusion.XForms.RichTextEditor;assembly=Syncfusion.SfRichTextEditor.XForms"
-    Title="WatchedStep1">
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions"
+    xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core"
+    xmlns:local1="clr-namespace:Rocket.WatchOrganizer.UI.Renderers"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    Title="WatchedStep1" BackgroundColor="#f5f5f5" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <StackLayout BackgroundColor="#FFF">
@@ -55,7 +53,7 @@
 
                             <Button Grid.Column="2" FontFamily="MaterialIconsRegular" Text="&#xe409;" 
                                     Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
-                                    BackgroundColor="#11100000"/>
+                                    BackgroundColor="#11100000" Command="{Binding ShowNextStepCommand}"/>
 
                             <Button Grid.Column="0" FontFamily="MaterialIconsRegular" Text="&#xe88a;" 
                                     Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
@@ -134,7 +132,7 @@
                                 <yummy:Border Color="#CCC" Thickness="3" />
                             </yummy:PancakeView.Border>
 
-                            <Editor Margin="10" HeightRequest="300" Placeholder="Descrição da série..." PlaceholderColor="#CCC"/>
+                            <local1:CustomEditor Margin="10" HeightRequest="300" Placeholder="Descrição da série..." PlaceholderColor="#CCC"/>
                         </yummy:PancakeView>
                     </Grid>
                 </yummy:PancakeView>

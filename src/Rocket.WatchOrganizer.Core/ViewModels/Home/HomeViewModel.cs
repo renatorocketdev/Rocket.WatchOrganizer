@@ -65,7 +65,6 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Home
             };
         }
 
-
         #region Properties
 
         private List<Serie> _series;

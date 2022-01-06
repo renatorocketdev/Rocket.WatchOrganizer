@@ -7,21 +7,112 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:local="clr-namespace:Rocket.WatchOrganizer.UI.Pages"
-    xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core"
-    Title="Main page">
+    xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions" x:DataType="viewModels:WatchedStep3ViewModel"
+    Title="WatchedStep3" 
+    BackgroundColor="#f5f5f5" NavigationPage.HasNavigationBar="False">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome!!&#10;App scaffolded with MvxScaffolding"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer mvx:Bi.nd="Tapped ShowSeriesCommand" />
-                </Label.GestureRecognizers>
-            </Label>
-            <Label Text="Step 3"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
-            </Label>
+        <StackLayout BackgroundColor="#FFF">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Nav Bar-->
+                <yummy:PancakeView Grid.Row="0" CornerRadius="0,0,0,0" BackgroundGradientStartPoint="0,0" BackgroundGradientEndPoint="1,0">
+                    <yummy:PancakeView.BackgroundGradientStops>
+                        <yummy:GradientStopCollection>
+                            <yummy:GradientStop Color="#7c4ed9" Offset="0.0" />
+                            <yummy:GradientStop Color="#672be0" Offset="0.4" />
+                            <yummy:GradientStop Color="#5512de" Offset="0.8" />
+                            <yummy:GradientStop Color="#4A00E0" Offset="1.0" />
+                        </yummy:GradientStopCollection>
+                    </yummy:PancakeView.BackgroundGradientStops>
+
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <Grid Margin="0,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Grid.ColumnSpan="3"
+                                           Style="{StaticResource LabelNunitoBlack}" 
+                                           FontSize="17" TextColor="#fff" Text="Adicionar Nova Série" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                            <Button Grid.Column="2" FontFamily="MaterialIconsRegular" Text="&#xe5ca;" 
+                                    Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
+                                    BackgroundColor="#11100000"/>
+
+                            <Button Grid.Column="0" FontFamily="MaterialIconsRegular" Text="&#xe408;" 
+                                    Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
+                                    BackgroundColor="#11100000" Command="{Binding BackNavigationCommand}"/>
+                        </Grid>
+                    </StackLayout>
+                </yummy:PancakeView>
+
+                <Grid Grid.Row="1" HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <controls:Circle Grid.Row="0" Grid.Column="0" Margin="5,10,5,10" FillColor="#FFF"
+                        StrokeColor="#652CB3" WidthRequest="10" HeightRequest="10"
+                        Active="True"/>
+
+                    <controls:Circle Grid.Row="0" Grid.Column="1" Margin="5,10,5,10" FillColor="#FFF"
+                        StrokeColor="#652CB3" WidthRequest="10" HeightRequest="10"
+                        Active="True"/>
+
+                    <controls:Circle Grid.Row="0" Grid.Column="2" Margin="5,10,5,10" FillColor="#652CB3"
+                        StrokeColor="#652CB3" WidthRequest="10" HeightRequest="10"
+                        Active="True"/>
+                </Grid>
+
+                <BoxView Grid.Row="2" Style="{StaticResource Divider}" Margin="30,0,30,20" Color="#CCC"/>
+
+                <Label Grid.Row="3"
+                           Style="{StaticResource LabelNunitoBold}" 
+                           FontSize="17" TextColor="#808080" Text="Título da Série" 
+                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                <Label Grid.Row="4"
+                           Style="{StaticResource LabelNunitoRegular}" 
+                           FontSize="17" TextColor="#808080" Text="Informações da Temporada" 
+                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                <yummy:PancakeView Grid.Row="5" BackgroundColor="Red">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="1" Margin="0,0,0,0"
+                                                Style="{StaticResource LabelMaterialIconsRegular}" 
+                                                FontSize="22" TextColor="#652CB3" Text="&#xe145;" HorizontalOptions="End"/>
+                    </Grid>
+                </yummy:PancakeView>
+            </Grid>
         </StackLayout>
+
     </ContentPage.Content>
 </views:MvxContentPage>

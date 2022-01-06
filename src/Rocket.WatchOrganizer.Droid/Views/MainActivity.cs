@@ -22,10 +22,11 @@ namespace Rocket.WatchOrganizer.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             CachedImageRenderer.Init(true);
+
+            
             base.OnCreate(bundle);
 
         }

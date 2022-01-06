@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace Rocket.WatchOrganizer.UI.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    [MvxContentPagePresentation(WrapInNavigationPage = false)]
+    [MvxContentPagePresentation(WrapInNavigationPage = true, NoHistory = false)]
     public partial class HomePage : MvxContentPage<HomeViewModel>
     {
         public HomePage()
