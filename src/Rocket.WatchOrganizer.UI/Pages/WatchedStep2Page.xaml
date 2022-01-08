@@ -15,10 +15,11 @@
     xmlns:local1="clr-namespace:Rocket.WatchOrganizer.UI.Renderers"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" x:DataType="viewModels:WatchedStep2ViewModel"
     Title="WatchedStep2" 
+    x:Name="root"
     BackgroundColor="#f5f5f5" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#FFF">
+        <StackLayout>
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -26,7 +27,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="25"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -55,9 +56,9 @@
                                            Style="{StaticResource LabelNunitoBlack}" 
                                            FontSize="17" TextColor="#fff" Text="Adicionar Nova Série" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
-                            <Button Grid.Column="2" FontFamily="MaterialIconsRegular" Text="&#xe409;" 
+                            <Button Grid.Column="2" FontFamily="MaterialIconsRegular" Text="&#xe5ca;" 
                                     Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
-                                    BackgroundColor="#11100000" Command="{Binding ShowNextStepCommand}"/>
+                                    BackgroundColor="#11100000"/>
 
                             <Button Grid.Column="0" FontFamily="MaterialIconsRegular" Text="&#xe408;" 
                                     Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
@@ -101,9 +102,14 @@
                            FontSize="17" TextColor="#808080" Text="Informações da Temporada" 
                            VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
-                <yummy:PancakeView Grid.Row="5" Margin="10" BackgroundColor="#AAA">
+                <yummy:PancakeView Grid.Row="5" Margin="10" CornerRadius="5" BackgroundColor="#FFF">
+                    <yummy:PancakeView.Shadow>
+                        <yummy:DropShadow Color="#000000" Offset="10,10" />
+                    </yummy:PancakeView.Shadow>
+                    
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="5"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
@@ -112,62 +118,82 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Row="0" Grid.Column="1" Margin="0" BackgroundColor="Red"
-                                            Style="{StaticResource LabelMaterialIconsRegular}" 
-                                            FontSize="32" TextColor="#652CB3" Text="&#xe145;" 
-                                            VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"/>
+                        <BoxView Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,0" CornerRadius="10,10,0,0" Color="#652CB3"/>
 
-                        <flv:FlowListView x:Name="ItemsListView" Grid.Row="1" Grid.ColumnSpan="2"                                
+                        <Label Grid.Row="1" Grid.ColumnSpan="2"
+                           Style="{StaticResource LabelNunitoRegular}" 
+                           FontSize="17" TextColor="#808080" Text="Temporadas" 
+                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        
+                        <!-- Add Season Button -->
+                        <Button Grid.Row="1" Grid.Column="1" Margin="0,0,10,0" Command="{Binding ShowAddEpisodeCommand}"
+                                            Style="{StaticResource LabelMaterialIconsRegular}"
+                                            FontSize="32" TextColor="#652CB3" Text="&#xe145;" 
+                                            VerticalOptions="Center" Padding="0" WidthRequest="45" HeightRequest="45" CornerRadius="30"/>
+
+                        <flv:FlowListView x:Name="ItemsListView" Grid.Row="2" Grid.ColumnSpan="2"                                
                                   FlowColumnCount="1"
-                                  SeparatorVisibility="Default" 
+                                  SeparatorVisibility="None" 
                                   HasUnevenRows="false"
                                   FlowUseAbsoluteLayoutInternally="True" 
                                   FlowColumnMinWidth="160"
-                                  HorizontalOptions="CenterAndExpand"
-                                  FlowItemsSource="{Binding Seasons}" BackgroundColor="#EEE">
+                                  RowHeight="75"
+                                          
+                                  HorizontalOptions="CenterAndExpand"                                          
+                                  FlowItemsSource="{Binding Seasons}" BackgroundColor="#FFF">
+
+                            <flv:FlowListView.FlowLoadingTemplate>
+                                <DataTemplate>
+                                    <StackLayout BackgroundColor="Red"></StackLayout>
+                                </DataTemplate>
+                            </flv:FlowListView.FlowLoadingTemplate>
 
                             <flv:FlowListView.FlowColumnTemplate>
                                 <DataTemplate>
-                                    <Grid Margin="10,10,10,10">
+                                    <yummy:PancakeView Margin="10" CornerRadius="5">
+                                        <Grid Padding="5" BackgroundColor="#EEE">
 
-                                        <yummy:PancakeView CornerRadius="10">
-                                            <yummy:PancakeView.Border>
-                                                <yummy:Border Color="#CCC" Thickness="1" />
-                                            </yummy:PancakeView.Border>
-                                            
-                                            <Grid Padding="5" BackgroundColor="Blue">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="150" />
-                                                </Grid.RowDefinitions>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*" />
-                                                    <ColumnDefinition Width="25" />
-                                                    <ColumnDefinition Width="25" />
-                                                    <ColumnDefinition Width="25" />
-                                                </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="30" />
+                                                <ColumnDefinition Width="30" />
+                                                <ColumnDefinition Width="30" />
+                                            </Grid.ColumnDefinitions>
 
-                                                <Label Grid.Column="0" BackgroundColor="Red"
-                                                Style="{StaticResource LabelNunitoRegular}" 
-                                                FontSize="17" TextColor="#808080" Text="Nome da Temporada" 
-                                                HorizontalTextAlignment="Start"/>
+                                            <Label Grid.Column="0" Margin="10,0,0,0"
+                                                    Style="{StaticResource LabelNunitoRegular}"
+                                                    FontSize="17" TextColor="#808080" Text="Nome da Temporada" 
+                                                    HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
-                                                <Label Grid.Column="1" Margin="0,0,0,0"
-                                                Style="{StaticResource LabelMaterialIconsRegular}" 
-                                                FontSize="25" TextColor="#652CB3" Text="&#xe145;"/>
+                                            <!-- Add Episode To Season-->
+                                            <Button Grid.Column="1" Margin="0,0,0,0" 
+                                                    Style="{StaticResource LabelMaterialIconsRegular}"
+                                                    FontSize="20" BackgroundColor="#652CB3" TextColor="#FFF" Text="&#xe145;" 
+                                                    VerticalOptions="Center" Padding="0" WidthRequest="30" HeightRequest="30" CornerRadius="30">
+                                            </Button>
 
-                                                <Label Grid.Column="2" Margin="0,0,0,0"
-                                                Style="{StaticResource LabelMaterialIconsRegular}" 
-                                                FontSize="25" TextColor="#652CB3" Text="&#xe3c9;"/>
+                                            <!-- Edit -->
+                                            <Button Grid.Column="2" Margin="0,0,0,0"
+                                                    Style="{StaticResource LabelMaterialIconsRegular}"
+                                                    FontSize="20" BackgroundColor="#652CB3" TextColor="#FFF" Text="&#xe3c9;" 
+                                                    VerticalOptions="Center" Padding="0" WidthRequest="30" HeightRequest="30" CornerRadius="30"/>
 
-                                                <Label Grid.Column="3" Margin="0,0,0,0"
-                                                Style="{StaticResource LabelMaterialIconsRegular}" 
-                                                FontSize="25" TextColor="#652CB3" Text="&#xe872;"/>
+                                            <!-- Delete -->
+                                            <Button Grid.Column="3" Margin="0,0,0,0"
+                                                    Style="{StaticResource LabelMaterialIconsRegular}"
+                                                    FontSize="20" BackgroundColor="#652CB3" TextColor="#FFF" Text="&#xe872;" 
+                                                    VerticalOptions="Center" Padding="0" WidthRequest="30" HeightRequest="30" CornerRadius="30"/>
+                                        </Grid>
+                                    </yummy:PancakeView>
 
-                                            </Grid>
-                                        </yummy:PancakeView>
-                                    </Grid>
                                 </DataTemplate>
+                                
                             </flv:FlowListView.FlowColumnTemplate>
+                            
+                            
                         </flv:FlowListView>
                     </Grid>
                 </yummy:PancakeView>

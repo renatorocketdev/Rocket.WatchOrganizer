@@ -63,8 +63,7 @@
 
                 <!--Flow List-->
                 <yummy:PancakeView  Grid.Row="1" Margin="5,10,5,10" 
-                                    Grid.RowSpan="2"
-                                    BackgroundColor="#EEE">
+                                    Grid.RowSpan="2">
 
                     <flv:FlowListView x:Name="ItemsListView"                                  
                                   FlowColumnCount="3"

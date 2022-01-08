@@ -12,6 +12,11 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
         private readonly IMvxNavigationService _navigationService;
         private readonly SeasonService _service;
 
+        public WatchedStep2ViewModel()
+        {
+
+        }
+
         public WatchedStep2ViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -38,6 +43,14 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
                 new Season
                 {
                     Titulo = "Temporada 2",
+                },
+                new Season
+                {
+                    Titulo = "Temporada 3",
+                },
+                new Season
+                {
+                    Titulo = "Temporada 4",
                 }
             };
         }
@@ -58,14 +71,15 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
 
         public IMvxAsyncCommand BackNavigationCommand => new MvxAsyncCommand(async () => await BackNavigationAsync());
 
-        public IMvxAsyncCommand ShowNextStepCommand => new MvxAsyncCommand(async () => await ShowNextStepAsync());
+        public IMvxAsyncCommand ShowAddEpisodeCommand => new MvxAsyncCommand(async () => await ShowAddEpisodeAsync());
 
         public async Task BackNavigationAsync()
         {
             await _navigationService.Close(this);
         }
-        public async Task ShowNextStepAsync()
+        public async Task ShowAddEpisodeAsync()
         {
+
             await _navigationService.Navigate<WatchedStep3ViewModel>();
         }
     }

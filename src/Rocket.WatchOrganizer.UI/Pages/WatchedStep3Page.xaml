@@ -10,17 +10,16 @@
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions" x:DataType="viewModels:WatchedStep3ViewModel"
     Title="WatchedStep3" 
     BackgroundColor="#f5f5f5" NavigationPage.HasNavigationBar="False">
-    
+
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#FFF">
+        <StackLayout>
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="25"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -48,11 +47,11 @@
 
                             <Label Grid.Column="0" Grid.ColumnSpan="3"
                                            Style="{StaticResource LabelNunitoBlack}" 
-                                           FontSize="17" TextColor="#fff" Text="Adicionar Nova Série" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                           FontSize="17" TextColor="#fff" Text="Episódios" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
                             <Button Grid.Column="2" FontFamily="MaterialIconsRegular" Text="&#xe5ca;" 
                                     Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
-                                    BackgroundColor="#11100000"/>
+                                    BackgroundColor="#11100000" Command="{Binding CheckCommand}"/>
 
                             <Button Grid.Column="0" FontFamily="MaterialIconsRegular" Text="&#xe408;" 
                                     Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
@@ -93,26 +92,91 @@
 
                 <Label Grid.Row="4"
                            Style="{StaticResource LabelNunitoRegular}" 
-                           FontSize="17" TextColor="#808080" Text="Informações da Temporada" 
+                           FontSize="17" TextColor="#808080" Text="Título da Temporada" 
                            VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
-                <yummy:PancakeView Grid.Row="5" BackgroundColor="Red">
+                <yummy:PancakeView Grid.Row="5" Margin="10" CornerRadius="5" BackgroundColor="#FFF">
+                    <yummy:PancakeView.Shadow>
+                        <yummy:DropShadow Color="#000000" Offset="10,10" />
+                    </yummy:PancakeView.Shadow>
+
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Row="0" Grid.Column="1" Margin="0,0,0,0"
+                        <BoxView Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,0" CornerRadius="10,10,0,0" Color="#652CB3"/>
+
+                        <Label Grid.Row="1" Grid.ColumnSpan="2"
+                           Style="{StaticResource LabelNunitoRegular}" 
+                           FontSize="17" TextColor="#808080" Text="Episódios" 
+                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        
+                        <!-- Add Button -->
+                        <Button Grid.Row="1" Grid.Column="1" Margin="0,0,10,0"
+                                            Style="{StaticResource LabelMaterialIconsRegular}"
+                                            FontSize="32" TextColor="#652CB3" Text="&#xe145;" 
+                                            VerticalOptions="Center" Padding="0" WidthRequest="45" HeightRequest="45" CornerRadius="30"/>
+
+                        <flv:FlowListView x:Name="ItemsListView" Grid.Row="2" Grid.ColumnSpan="2"                                
+                                  FlowColumnCount="1"
+                                  SeparatorVisibility="Default" 
+                                  HasUnevenRows="false"
+                                  FlowUseAbsoluteLayoutInternally="True" 
+                                  FlowColumnMinWidth="160"
+                                  RowHeight="75"
+                                  HorizontalOptions="CenterAndExpand"
+                                  FlowItemsSource="{Binding Episodes}" BackgroundColor="#FFF">
+
+                            <flv:FlowListView.FlowColumnTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="10,10,10,10">
+
+                                        <yummy:PancakeView CornerRadius="5">
+                                            <Grid Padding="5" BackgroundColor="#EEE">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="25" />
+                                                    <ColumnDefinition Width="25" />
+                                                    <ColumnDefinition Width="25" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="0" Margin="10,0,0,0"
+                                                Style="{StaticResource LabelNunitoRegular}" 
+                                                FontSize="17" TextColor="#808080" Text="Nome do Episódio" 
+                                                HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                                                <Label Grid.Column="1" Margin="0,0,0,0"
                                                 Style="{StaticResource LabelMaterialIconsRegular}" 
-                                                FontSize="22" TextColor="#652CB3" Text="&#xe145;" HorizontalOptions="End"/>
+                                                FontSize="25" TextColor="#652CB3" Text="&#xe145;" VerticalTextAlignment="Center"/>
+
+                                                <Label Grid.Column="2" Margin="0,0,0,0"
+                                                Style="{StaticResource LabelMaterialIconsRegular}" 
+                                                FontSize="25" TextColor="#652CB3" Text="&#xe3c9;" VerticalTextAlignment="Center"/>
+
+                                                <Label Grid.Column="3" Margin="0,0,0,0"
+                                                Style="{StaticResource LabelMaterialIconsRegular}" 
+                                                FontSize="25" TextColor="#652CB3" Text="&#xe872;" VerticalTextAlignment="Center"/>
+
+                                            </Grid>
+                                        </yummy:PancakeView>
+                                    </Grid>
+                                </DataTemplate>
+                            </flv:FlowListView.FlowColumnTemplate>
+                        </flv:FlowListView>
                     </Grid>
                 </yummy:PancakeView>
             </Grid>
         </StackLayout>
-
     </ContentPage.Content>
 </views:MvxContentPage>
+

@@ -70,7 +70,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Custom\CustomEditorRenderer.cs" />
     <Compile Include="Linker\LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,9 +94,6 @@
     </PackageReference>
     <PackageReference Include="MvvmCross.Forms">
       <Version>8.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="RealSimpleCircle">
-      <Version>1.0.12</Version>
     </PackageReference>
     <PackageReference Include="Serilog.Extensions.Logging">
       <Version>3.0.1</Version>
