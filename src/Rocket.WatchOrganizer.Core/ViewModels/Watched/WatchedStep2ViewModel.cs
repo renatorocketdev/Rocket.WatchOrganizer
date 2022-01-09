@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using Rocket.WatchOrganizer.Core.Models;
@@ -11,11 +12,6 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
     {
         private readonly IMvxNavigationService _navigationService;
         private readonly SeasonService _service;
-
-        public WatchedStep2ViewModel()
-        {
-
-        }
 
         public WatchedStep2ViewModel(IMvxNavigationService navigationService)
         {
@@ -32,13 +28,13 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
             GetSeasonListAsync();
         }
 
-        private void GetSeasonListAsync()
+        public void GetSeasonListAsync()
         {
             Seasons = new List<Season>
             {
                 new Season
                 {
-                    Titulo = "Temporada 1",
+                    Titulo = "Temporada 1", 
                 },
                 new Season
                 {
@@ -79,7 +75,6 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
         }
         public async Task ShowAddEpisodeAsync()
         {
-
             await _navigationService.Navigate<WatchedStep3ViewModel>();
         }
     }

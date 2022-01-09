@@ -10,7 +10,7 @@
     xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions"
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core"
     xmlns:local1="clr-namespace:Rocket.WatchOrganizer.UI.Renderers"
-    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:DataType="viewModels:WatchedStep1ViewModel"
     Title="WatchedStep1" BackgroundColor="#f5f5f5" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
@@ -57,7 +57,7 @@
 
                             <Button Grid.Column="0" FontFamily="MaterialIconsRegular" Text="&#xe88a;" 
                                     Margin="0" Padding="0" CornerRadius="30" TextColor="#FFF" FontSize="22" 
-                                    BackgroundColor="#11100000"/>
+                                    BackgroundColor="#11100000" Command="{Binding BackNavigationCommand}"/>
                         </Grid>
                     </StackLayout>
                 </yummy:PancakeView>
