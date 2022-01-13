@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using Rg.Plugins.Popup.Services;
 using Rocket.WatchOrganizer.Core.Models;
 using Rocket.WatchOrganizer.Core.Service;
 
@@ -77,5 +77,11 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
         {
             await _navigationService.Navigate<WatchedStep3ViewModel>();
         }
+
+        public async Task OpenPopupAsync()
+        {
+            //await PopupNavigation.Instance.PushAsync(new PopupAddSeason);
+        }
+
     }
 }

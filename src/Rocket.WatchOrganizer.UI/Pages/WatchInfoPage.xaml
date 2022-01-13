@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage
+    x:Class="Rocket.WatchOrganizer.UI.Pages.WatchInfoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.WatchList;assembly=Rocket.WatchOrganizer.Core"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:watchlist="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.WatchList;assembly=Rocket.WatchOrganizer.Core"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:DataType="watchlist:WatchListViewModel"
+    x:TypeArguments="viewModels:WatchInfoPageViewModel"
+    BackgroundColor="#f5f5f5"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--  Nav Bar  -->
+                    <yummy:PancakeView
+                        Grid.Row="0"
+                        BackgroundGradientEndPoint="1,0"
+                        BackgroundGradientStartPoint="0,0"
+                        CornerRadius="0,0,0,0">
+                        <yummy:PancakeView.BackgroundGradientStops>
+                            <yummy:GradientStopCollection>
+                                <yummy:GradientStop Offset="0.0" Color="#7c4ed9" />
+                                <yummy:GradientStop Offset="0.4" Color="#672be0" />
+                                <yummy:GradientStop Offset="0.8" Color="#5512de" />
+                                <yummy:GradientStop Offset="1.0" Color="#4A00E0" />
+                            </yummy:GradientStopCollection>
+                        </yummy:PancakeView.BackgroundGradientStops>
+
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <Grid Margin="0,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <Button
+                                    Grid.Column="0"
+                                    Margin="0"
+                                    Padding="0"
+                                    BackgroundColor="#11100000"
+                                    Command="{Binding BackNavigationCommand}"
+                                    CornerRadius="30"
+                                    FontFamily="MaterialIconsRegular"
+                                    FontSize="22"
+                                    Text="&#xe408;"
+                                    TextColor="#FFF" />
+                            </Grid>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView
+                        Grid.Row="1"
+                        Margin="0,0,0,10"
+                        BackgroundColor="#FFF"
+                        CornerRadius="0,0,0,0"
+                        VerticalOptions="FillAndExpand">
+
+                        <yummy:PancakeView.Shadow>
+                            <yummy:DropShadow Offset="2,2" Color="#000000" />
+                        </yummy:PancakeView.Shadow>
+
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="190" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="240" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+
+                            <StackLayout
+                                Grid.Row="0"
+                                BackgroundColor="#808080"
+                                VerticalOptions="FillAndExpand">
+                                <Label
+                                    Margin="0"
+                                    FontSize="55"
+                                    HorizontalTextAlignment="Center"
+                                    Style="{StaticResource LabelMaterialIconsRegular}"
+                                    Text="&#xe43f;"
+                                    TextColor="#fff"
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Center" />
+                            </StackLayout>
+
+                            <Label
+                                Grid.Row="1"
+                                Margin="0,10,0,10"
+                                FontSize="17"
+                                HorizontalTextAlignment="Center"
+                                Style="{StaticResource LabelNunitoBold}"
+                                Text="Título da Série"
+                                TextColor="#808080"
+                                VerticalTextAlignment="Center" />
+
+                            <Label
+                                Grid.Row="2"
+                                Margin="5,0,5,0"
+                                FontSize="17"
+                                HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
+                                LineHeight="1.4"
+                                Style="{StaticResource LabelNunitoRegular}"
+                                TextColor="#808080">
+                                <Label.Text>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </Label.Text>
+                            </Label>
+
+                            <Button
+                                Grid.Row="3"
+                                Margin="10,5,10,10"
+                                CornerRadius="20"
+                                Style="{StaticResource ButtonTransparent}"
+                                Text="Alterar Informações"
+                                TextColor="#FFF">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="1,0">
+                                        <GradientStop Offset="0.1" Color="#7c4ed9" />
+                                        <GradientStop Offset="0.4" Color="#672be0" />
+                                        <GradientStop Offset="0.8" Color="#5512de" />
+                                        <GradientStop Offset="1.0" Color="#4A00E0" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </Grid>
+
+                    </yummy:PancakeView>
+
+                    <ScrollView Grid.Row="2">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                            <yummy:PancakeView
+                                Grid.Row="0"
+                                Margin="10,3,10,0"
+                                CornerRadius="5">
+                                <xct:Expander
+                                    x:Name="expander"
+                                    Grid.Row="0"
+                                    BackgroundColor="#FFF">
+                                    <xct:Expander.Header>
+                                        <Grid HeightRequest="50" VerticalOptions="CenterAndExpand">
+                                            <Label
+                                                Margin="10,0,10,0"
+                                                FontSize="17"
+                                                Style="{StaticResource LabelNunitoBold}"
+                                                Text="Season 1"
+                                                TextColor="#5512de"
+                                                VerticalTextAlignment="Center" />
+
+                                            <Image
+                                                Margin="10,0,10,0"
+                                                HorizontalOptions="End"
+                                                Source="expand.png"
+                                                VerticalOptions="Center">
+                                                <Image.Triggers>
+                                                    <DataTrigger TargetType="Image" Value="True">
+                                                        <Setter Property="Source" Value="collapse.png" />
+                                                    </DataTrigger>
+                                                </Image.Triggers>
+                                            </Image>
+                                        </Grid>
+                                    </xct:Expander.Header>
+
+                                    <xct:Expander.ContentTemplate>
+                                        <DataTemplate>
+                                            <Grid Padding="10">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="40" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    FontAttributes="Italic"
+                                                    FontSize="15"
+                                                    Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae. Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae. Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae." />
+
+                                                <BoxView
+                                                    Grid.Row="1"
+                                                    Margin="0,0,0,0"
+                                                    Style="{StaticResource Divider}"
+                                                    Color="#CCC" />
+
+                                                <Grid
+                                                    Grid.Row="2"
+                                                    Margin="10,0,10,0"
+                                                    HeightRequest="80">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 01" />
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Grid.Column="1"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 02" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 03" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 04" />
+                                                    <Label
+                                                        Grid.Row="2"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 05" />
+                                                    <Label
+                                                        Grid.Row="2"
+                                                        Grid.Column="1"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 06" />
+                                                </Grid>
+
+                                                <!--#region Expander Episodes-->
+                                                <xct:Expander
+                                                    x:Name="expanderEpisodes"
+                                                    Grid.Row="3"
+                                                    Margin="0">
+                                                    <xct:Expander.Header>
+                                                        <Grid VerticalOptions="End">
+                                                            <Image
+                                                                Margin="10,0,10,0"
+                                                                HorizontalOptions="Center"
+                                                                Source="expand.png"
+                                                                VerticalOptions="Center">
+                                                                <Image.Triggers>
+                                                                    <DataTrigger TargetType="Image" Value="True">
+                                                                        <Setter Property="Source" Value="collapse.png" />
+                                                                    </DataTrigger>
+                                                                </Image.Triggers>
+                                                            </Image>
+                                                        </Grid>
+                                                    </xct:Expander.Header>
+
+                                                    <xct:Expander.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <Grid />
+                                                        </DataTemplate>
+                                                    </xct:Expander.ContentTemplate>
+                                                </xct:Expander>
+                                                <!--#endregion-->
+                                            </Grid>
+                                        </DataTemplate>
+                                    </xct:Expander.ContentTemplate>
+                                </xct:Expander>
+                            </yummy:PancakeView>
+
+                            <yummy:PancakeView
+                                Grid.Row="0"
+                                Margin="10,3,10,0"
+                                CornerRadius="5">
+                                <xct:Expander
+                                    x:Name="expander1"
+                                    Grid.Row="0"
+                                    BackgroundColor="#FFF">
+                                    <xct:Expander.Header>
+                                        <Grid HeightRequest="50" VerticalOptions="CenterAndExpand">
+                                            <Label
+                                                Margin="10,0,10,0"
+                                                FontSize="17"
+                                                Style="{StaticResource LabelNunitoBold}"
+                                                Text="Season 2"
+                                                TextColor="#5512de"
+                                                VerticalTextAlignment="Center" />
+
+                                            <Image
+                                                Margin="10,0,10,0"
+                                                HorizontalOptions="End"
+                                                Source="expand.png"
+                                                VerticalOptions="Center">
+                                                <Image.Triggers>
+                                                    <DataTrigger TargetType="Image" Value="True">
+                                                        <Setter Property="Source" Value="collapse.png" />
+                                                    </DataTrigger>
+                                                </Image.Triggers>
+                                            </Image>
+                                        </Grid>
+                                    </xct:Expander.Header>
+
+                                    <xct:Expander.ContentTemplate>
+                                        <DataTemplate>
+                                            <Grid Padding="10">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="40" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    FontAttributes="Italic"
+                                                    FontSize="15"
+                                                    Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae. Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae. Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae." />
+
+                                                <BoxView
+                                                    Grid.Row="1"
+                                                    Margin="0,0,0,0"
+                                                    Style="{StaticResource Divider}"
+                                                    Color="#CCC" />
+
+                                                <Grid
+                                                    Grid.Row="2"
+                                                    Margin="10,0,10,0"
+                                                    HeightRequest="80">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 01" />
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Grid.Column="1"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 02" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 03" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 04" />
+                                                    <Label
+                                                        Grid.Row="2"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 05" />
+                                                    <Label
+                                                        Grid.Row="2"
+                                                        Grid.Column="1"
+                                                        FontSize="15"
+                                                        Style="{StaticResource LabelRegular}"
+                                                        Text="Season 1 - Episode 06" />
+                                                </Grid>
+
+                                                <!--#region Expander Episodes-->
+                                                <xct:Expander
+                                                    x:Name="expanderEpisodes1"
+                                                    Grid.Row="3"
+                                                    Margin="0">
+                                                    <xct:Expander.Header>
+                                                        <Grid VerticalOptions="End">
+                                                            <Image
+                                                                Margin="10,0,10,0"
+                                                                HorizontalOptions="Center"
+                                                                Source="expand.png"
+                                                                VerticalOptions="Center">
+                                                                <Image.Triggers>
+                                                                    <DataTrigger TargetType="Image" Value="True">
+                                                                        <Setter Property="Source" Value="collapse.png" />
+                                                                    </DataTrigger>
+                                                                </Image.Triggers>
+                                                            </Image>
+                                                        </Grid>
+                                                    </xct:Expander.Header>
+
+                                                    <xct:Expander.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <Grid />
+                                                        </DataTemplate>
+                                                    </xct:Expander.ContentTemplate>
+                                                </xct:Expander>
+                                                <!--#endregion-->
+                                            </Grid>
+                                        </DataTemplate>
+                                    </xct:Expander.ContentTemplate>
+                                </xct:Expander>
+                            </yummy:PancakeView>
+
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</views:MvxContentPage>

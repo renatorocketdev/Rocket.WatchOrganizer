@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Linker\LinkerPleaseInclude.cs" />
+    <Compile Include="Renderers\CustomEditorRender.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
@@ -95,6 +96,9 @@
     <PackageReference Include="MvvmCross.Forms">
       <Version>8.0.2</Version>
     </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.14</Version>
+    </PackageReference>
     <PackageReference Include="Serilog.Extensions.Logging">
       <Version>3.0.1</Version>
     </PackageReference>
@@ -109,6 +113,9 @@
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.RecyclerView">
       <Version>1.2.1.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.CommunityToolkit">
+      <Version>1.3.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>5.0.0.2125</Version>
@@ -148,7 +155,9 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_mvvmcross_logo.png" />
     <AndroidResource Include="Resources\values-v19\styles.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\collapse.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rocket.WatchOrganizer.Core\Rocket.WatchOrganizer.Core.csproj">
       <Project>{9DD73B95-1631-4798-9CB5-CB44CDAF9A2F}</Project>
@@ -158,6 +167,9 @@
       <Project>{86FC81D8-B087-4A95-A3F8-6C33D5E93214}</Project>
       <Name>Rocket.WatchOrganizer.UI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\expand.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

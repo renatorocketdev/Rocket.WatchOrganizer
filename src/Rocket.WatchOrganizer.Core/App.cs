@@ -1,6 +1,7 @@
-﻿using MvvmCross.IoC;
+using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 using Rocket.WatchOrganizer.Core.ViewModels.Home;
+using Xamarin.Forms;
 
 namespace Rocket.WatchOrganizer.Core
 {
@@ -12,7 +13,6 @@ namespace Rocket.WatchOrganizer.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-
             RegisterAppStart<HomeViewModel>();
         }
     }

@@ -24,6 +24,8 @@ namespace Rocket.WatchOrganizer.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            Rg.Plugins.Popup.Popup.Init(this);
             CachedImageRenderer.Init(true);
 
             
