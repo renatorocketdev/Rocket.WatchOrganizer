@@ -2090,25 +2090,3 @@ zoom_out_map e56b
 
 
 
-
-<ListView 
-                    x:Name="ItemsListView" 
-                    Grid.Row="1"
-                    Grid.RowSpan="2"
-                    CachingStrategy="RecycleElement"
-                    ItemsSource="{Binding Series}"
-                    HasUnevenRows="True"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    SeparatorVisibility="None" Margin="10,0,10,0">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Image Source="{Binding Banner}" Aspect="AspectFit"/>
-                                    <Label Text="{Binding Titulo}"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>

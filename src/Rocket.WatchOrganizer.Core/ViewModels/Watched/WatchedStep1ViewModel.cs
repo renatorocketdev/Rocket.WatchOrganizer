@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
-using Rocket.WatchOrganizer.Core.ViewModels.Watched;
 
 namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
 {
@@ -14,8 +13,14 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
             _navigationService = navigationService;
         }
 
+        public IMvxAsyncCommand BackNavigationCommand => new MvxAsyncCommand(async () => await BackNavigationAsync());
+
         public IMvxAsyncCommand ShowNextStepCommand => new MvxAsyncCommand(async () => await ShowNextStepAsync());
 
+        public async Task BackNavigationAsync()
+        {
+            await _navigationService.Close(this);
+        }
         public async Task ShowNextStepAsync()
         {
             await _navigationService.Navigate<WatchedStep2ViewModel>();

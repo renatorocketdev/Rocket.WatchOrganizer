@@ -13,7 +13,7 @@ using Xamarin.Forms.Xaml;
 namespace Rocket.WatchOrganizer.UI.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    [MvxContentPagePresentation(WrapInNavigationPage = false)]
+    [MvxContentPagePresentation(WrapInNavigationPage = true, NoHistory = false)]
     public partial class WatchedStep3Page : MvxContentPage<WatchedStep3ViewModel>
     {
         public WatchedStep3Page()
