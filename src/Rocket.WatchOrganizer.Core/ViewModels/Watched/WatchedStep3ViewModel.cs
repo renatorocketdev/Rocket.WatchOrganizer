@@ -4,14 +4,31 @@ using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using Rocket.WatchOrganizer.Core.Models;
 using Rocket.WatchOrganizer.Core.Service;
+using System.Linq;
+using System;
+using System.Collections.ObjectModel;
 
 namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
 {
-    public class WatchedStep3ViewModel : BaseViewModel
+    public class WatchedStep3ViewModel : BaseViewModel<Season, Season>
     {
+        #region Properties
+
+        private Season _season;
+        public Season Season
+        {
+            get => _season;
+            set
+            {
+                _season = value;
+                RaisePropertyChanged(() => Season);
+            }
+        }
+
+        #endregion
+
         private readonly IMvxNavigationService _navigationService;
         private readonly EpisodeService _service;
-
 
         public WatchedStep3ViewModel(IMvxNavigationService navigationService)
         {
@@ -21,6 +38,12 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
                 _service = new EpisodeService();
             }
         }
+
+        public override void Prepare(Season season)
+        {
+            _season = season;
+        }
+
         public override async Task Initialize()
         {
             await base.Initialize();
@@ -29,49 +52,37 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
 
         private void GetSeasonListAsync()
         {
-            Episodes = new List<Episode>
-            {
-                new Episode
-                {
-                    Titulo = "Episode 1",
-                },
-                new Episode
-                {
-                    Titulo = "Episode 2",
-                },
-                new Episode
-                {
-                    Titulo = "Episode 3",
-                },
-                new Episode
-                {
-                    Titulo = "Episode 4",
-                }
-            };
-        }
+            var episodes = new ObservableCollection<Episode>();
 
-        #region Properties
-
-        private List<Episode> _episodes;
-        public List<Episode> Episodes
-        {
-            get => _episodes;
-            set
+            for (var i = 1; i <= 10; i++)
             {
-                _episodes = value;
-                RaisePropertyChanged(() => Episodes);
+                episodes.Add(new Episode { Titulo = "Episódio " + i });
             }
+
+            _season.Episodes = episodes;
         }
-        #endregion
 
         public IMvxAsyncCommand BackNavigationCommand => new MvxAsyncCommand(async () => await BackNavigationAsync());
-
-        public IMvxAsyncCommand CheckCommand => new MvxAsyncCommand(async () => await CheckCommandAsync());
-
         public async Task BackNavigationAsync()
         {
-            await _navigationService.Close(this);
+            if (IsListEpisodesValid())
+            {
+                await _navigationService.Close(this, _season);
+            }
         }
+
+        private bool IsListEpisodesValid()
+        {
+            return _season.Episodes.Count > 0;
+        }
+
+        public IMvxCommand<Episode> DeleteEpisodeCommand => new MvxCommand<Episode>((episode) => DeleteEpisode(episode));
+        public void DeleteEpisode(Episode episode)
+        {
+            _season.Episodes.Remove(episode);
+        }
+
+        public IMvxAsyncCommand CheckCommand => new MvxAsyncCommand(async () => await CheckCommandAsync());
         public async Task CheckCommandAsync()
         {
             //Validação

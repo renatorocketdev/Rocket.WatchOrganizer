@@ -9,7 +9,6 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     Title="WatchedStep2"
-    x:DataType="viewModels:WatchedStep2ViewModel"
     x:TypeArguments="viewModels:WatchedStep2ViewModel"
     BackgroundColor="#f5f5f5"
     NavigationPage.HasNavigationBar="False">
@@ -206,7 +205,7 @@
                             Margin="5"
                             HasUnevenRows="false"
                             HorizontalOptions="CenterAndExpand"
-                            ItemsSource="{Binding Seasons}"
+                            ItemsSource="{Binding Serie.Seasons}"
                             RowHeight="70"
                             SeparatorVisibility="None"
                             VerticalOptions="FillAndExpand">
@@ -233,7 +232,7 @@
                                                         FontSize="17"
                                                         HorizontalTextAlignment="Start"
                                                         Style="{StaticResource LabelNunitoRegular}"
-                                                        Text="Nome da Temporada"
+                                                        Text="{Binding Titulo}"
                                                         TextColor="#808080"
                                                         VerticalTextAlignment="Center" />
 
@@ -244,6 +243,7 @@
                                                         Padding="0"
                                                         BackgroundColor="#FFF"
                                                         Command="{Binding Path=BindingContext.ShowAddEpisodeCommand, Source={x:Reference ItemsListView}}"
+                                                        CommandParameter="{Binding .}"
                                                         CornerRadius="30"
                                                         FontSize="20"
                                                         HeightRequest="30"
@@ -274,6 +274,8 @@
                                                         Margin="0,0,0,0"
                                                         Padding="0"
                                                         BackgroundColor="#FFF"
+                                                        Command="{Binding Path=BindingContext.DeleteSeasonCommand, Source={x:Reference ItemsListView}}"
+                                                        CommandParameter="{Binding .}"
                                                         CornerRadius="30"
                                                         FontSize="20"
                                                         HeightRequest="30"
