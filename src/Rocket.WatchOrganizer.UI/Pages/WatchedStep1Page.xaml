@@ -187,7 +187,7 @@
                             MinLength="5"
                             Placeholder="Título da série..."
                             PlaceholderColor="#CCC"
-                            Text=""
+                            Text="{Binding Serie.Titulo, Mode=TwoWay}"
                             TextFontSize="17"
                             TitleColor="#808080" />
 

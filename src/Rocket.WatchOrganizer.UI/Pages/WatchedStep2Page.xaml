@@ -3,6 +3,7 @@
     x:Class="Rocket.WatchOrganizer.UI.Pages.WatchedStep2Page"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions"
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
@@ -142,7 +143,7 @@
                     FontSize="17"
                     HorizontalTextAlignment="Center"
                     Style="{StaticResource LabelNunitoBold}"
-                    Text="Título da Série"
+                    Text="{Binding Serie.Titulo, Mode=TwoWay}"
                     TextColor="#808080"
                     VerticalTextAlignment="Center" />
 
@@ -191,7 +192,11 @@
                             Style="{StaticResource LabelNunitoRegular}"
                             Text="Temporadas"
                             TextColor="#808080"
-                            VerticalTextAlignment="Center" />
+                            VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer mvx:Bi.nd="Tapped AddSeasonCommand"/>
+                            </Label.GestureRecognizers>
+                        </Label>
 
                         <ListView
                             x:Name="ItemsListView"

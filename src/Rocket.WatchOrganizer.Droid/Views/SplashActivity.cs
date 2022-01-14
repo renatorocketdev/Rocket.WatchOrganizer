@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Android.App;
 using Android.OS;
 using MvvmCross.Forms.Platforms.Android.Views;
@@ -16,6 +17,7 @@ namespace Rocket.WatchOrganizer.Droid.Views
     {
         protected override Task RunAppStartAsync(Bundle bundle)
         {
+            UserDialogs.Init(this);
             StartActivity(typeof(MainActivity));
             return Task.CompletedTask;
         }

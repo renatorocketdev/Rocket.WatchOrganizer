@@ -1,3 +1,5 @@
+using Acr.UserDialogs;
+using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 using Rocket.WatchOrganizer.Core.ViewModels.Home;
@@ -9,6 +11,8 @@ namespace Rocket.WatchOrganizer.Core
     {
         public override void Initialize()
         {
+            Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
+
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
