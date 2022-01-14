@@ -152,7 +152,7 @@
                     FontSize="17"
                     HorizontalTextAlignment="Center"
                     Style="{StaticResource LabelNunitoRegular}"
-                    Text="Título da Temporada"
+                    Text="Número da Temporada"
                     TextColor="#808080"
                     VerticalTextAlignment="Center" />
             </Grid>
@@ -239,6 +239,7 @@
                                                         Margin="0,0,0,0"
                                                         Padding="0"
                                                         BackgroundColor="#FFF"
+                                                        Clicked="OpenEditPopup_ClickAsync"
                                                         CornerRadius="30"
                                                         FontSize="20"
                                                         HeightRequest="30"
@@ -254,6 +255,7 @@
                                                         Margin="0,0,0,0"
                                                         Padding="0"
                                                         BackgroundColor="#FFF"
+                                                        Clicked="OpenDeletePopup_ClickAsync"
                                                         CornerRadius="30"
                                                         FontSize="20"
                                                         HeightRequest="30"
@@ -286,6 +288,7 @@
                                     Padding="0"
                                     AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
                                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                                    Clicked="OpenPopup_ClickAsync"
                                     CornerRadius="30"
                                     FontSize="32"
                                     HeightRequest="45"

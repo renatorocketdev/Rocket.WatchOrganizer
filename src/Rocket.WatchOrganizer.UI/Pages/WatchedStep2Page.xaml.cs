@@ -1,8 +1,9 @@
 using System.Threading.Tasks;
-using MvvmCross.Commands;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
+using Rg.Plugins.Popup.Services;
 using Rocket.WatchOrganizer.Core.ViewModels.Watched;
+using Rocket.WatchOrganizer.UI.Popup.Season;
 using Xamarin.Forms.Xaml;
 
 namespace Rocket.WatchOrganizer.UI.Pages
@@ -14,6 +15,34 @@ namespace Rocket.WatchOrganizer.UI.Pages
         public WatchedStep2Page()
         {
             InitializeComponent();
+        }
+
+        private async void OpenPopup_ClickAsync(object sender, System.EventArgs e)
+        {
+           await OpenPopupAsync();
+        }
+        private async void OpenEditPopup_ClickAsync(object sender, System.EventArgs e)
+        {
+            await OpenEditPopupAsync();
+        }
+        private async void OpenDeletePopup_ClickAsync(object sender, System.EventArgs e)
+        {
+            await OpenDeletePopupAsync();
+        }
+        public async Task OpenPopupAsync()
+        {
+            var page = new PopupAddSeason("Adicionar Temporada");
+            await PopupNavigation.Instance.PushAsync(page);
+        }
+        public async Task OpenEditPopupAsync()
+        {
+            var page = new PopupAddSeason("Editar Temporada");
+            await PopupNavigation.Instance.PushAsync(page);
+        }
+        public async Task OpenDeletePopupAsync()
+        {
+            var page = new PopupDeleteSeason();
+            await PopupNavigation.Instance.PushAsync(page);
         }
     }
 }

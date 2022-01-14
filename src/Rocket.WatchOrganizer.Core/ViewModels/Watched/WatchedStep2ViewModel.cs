@@ -106,11 +106,6 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
             await _navigationService.Navigate<WatchedStep3ViewModel>();
         }
 
-        public async Task OpenPopupAsync()
-        {
-            await PopupNavigation.Instance.PushAsync(new PopupAddSeason);
-        }
-
         private async Task AddSeasonAsync()
         {
             var result = await Mvx.IoCProvider.Resolve<IUserDialogs>().PromptAsync("Título Temporada");

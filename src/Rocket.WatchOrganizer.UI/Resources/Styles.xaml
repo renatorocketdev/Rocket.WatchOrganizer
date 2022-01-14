@@ -149,7 +149,8 @@
     <!--#endregion-->
 
     <Style x:Key="PopupLayout" TargetType="StackLayout">
-        <Setter Property="Padding" Value="{OnPlatform Android=20, UWP=20, iOS=5}" />
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="BackgroundColor" Value="#FFF" />
     </Style>
 
 </ResourceDictionary>
