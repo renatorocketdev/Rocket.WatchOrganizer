@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
@@ -8,6 +9,8 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopupAddSeason : PopupPage
     {
+        public event EventHandler<object> CallbackEvent;
+
         public PopupAddSeason(string titulo)
         {
             InitializeComponent();
@@ -34,6 +37,15 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
         }
         public async Task ClosePopupAsync()
         {
+            await PopupNavigation.Instance.PopAsync();
+        }
+
+        public Core.Models.Season Season { get; set; }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            CallbackEvent?.Invoke(this, Season);
+
             await PopupNavigation.Instance.PopAsync();
         }
     }

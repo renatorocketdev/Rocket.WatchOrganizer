@@ -95,6 +95,7 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     Margin="10,0,10,10"
+                    Clicked="Button_Clicked"
                     BorderColor="Transparent"
                     CornerRadius="10"
                     FontSize="12"

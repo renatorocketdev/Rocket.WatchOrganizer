@@ -1,9 +1,11 @@
+using System;
 using System.Threading.Tasks;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
 using Rg.Plugins.Popup.Services;
 using Rocket.WatchOrganizer.Core.ViewModels.Watched;
 using Rocket.WatchOrganizer.UI.Popup.Season;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Rocket.WatchOrganizer.UI.Pages
@@ -12,6 +14,7 @@ namespace Rocket.WatchOrganizer.UI.Pages
     [MvxContentPagePresentation(WrapInNavigationPage = true, NoHistory = false, Animated = true)]
     public partial class WatchedStep2Page : MvxContentPage<WatchedStep2ViewModel>
     {
+       
         public WatchedStep2Page()
         {
             InitializeComponent();
@@ -32,8 +35,15 @@ namespace Rocket.WatchOrganizer.UI.Pages
         public async Task OpenPopupAsync()
         {
             var page = new PopupAddSeason("Adicionar Temporada");
+            page.CallbackEvent += (object sender, object e) => CallbackMethod(sender, e);
             await PopupNavigation.Instance.PushAsync(page);
         }
+
+        private void CallbackMethod(object sender, object e)
+        {
+            ViewModel.Serie.Banner = e.ToString();
+        }
+
         public async Task OpenEditPopupAsync()
         {
             var page = new PopupAddSeason("Editar Temporada");
