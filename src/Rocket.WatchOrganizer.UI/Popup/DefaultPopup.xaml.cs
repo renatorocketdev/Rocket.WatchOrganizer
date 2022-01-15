@@ -1,23 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Rocket.WatchOrganizer.UI.Popup.Episode
+namespace Rocket.WatchOrganizer.UI.Popup
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PopupDeleteEpisode : PopupPage
+    public partial class DefaultPopup : PopupPage
     {
-        public PopupDeleteEpisode()
+        public DefaultPopup(string message)
         {
             InitializeComponent();
+            labelMessage.Text = message;
         }
-
         // Invoked when a hardware back button is pressed
         protected override bool OnBackButtonPressed()
         {

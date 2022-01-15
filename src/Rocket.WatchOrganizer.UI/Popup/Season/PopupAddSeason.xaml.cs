@@ -11,10 +11,10 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
     {
         public event EventHandler<object> CallbackEvent;
 
-        public PopupAddSeason(string titulo)
+        public PopupAddSeason(string message)
         {
             InitializeComponent();
-            label1.Text = titulo;
+            label1.Text = message;
         }
 
         // Invoked when a hardware back button is pressed
@@ -42,7 +42,7 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
 
         public Core.Models.Season Season { get; set; }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void Button_ClickedAsync(object sender, EventArgs e)
         {
             CallbackEvent?.Invoke(this, Season);
 

@@ -3,6 +3,7 @@ using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
 using Rg.Plugins.Popup.Services;
 using Rocket.WatchOrganizer.Core.ViewModels.Watched;
+using Rocket.WatchOrganizer.UI.Popup;
 using Rocket.WatchOrganizer.UI.Popup.Episode;
 using Xamarin.Forms.Xaml;
 
@@ -30,18 +31,18 @@ namespace Rocket.WatchOrganizer.UI.Pages
         }
         public async Task OpenPopupAsync()
         {
-            var page = new PopupAddEpisode();
+            var page = new PopupAddEpisode("Adicionar Episódio");
             await PopupNavigation.Instance.PushAsync(page);
         }
 
         public async Task OpenEditPopupAsync()
         {
-            var page = new PopupAddEpisode();
+            var page = new PopupAddEpisode("Editar Episódio");
             await PopupNavigation.Instance.PushAsync(page);
         }
         public async Task OpenDeletePopupAsync()
         {
-            var page = new PopupDeleteEpisode();
+            var page = new DefaultPopup("Deletar Episódio");
             await PopupNavigation.Instance.PushAsync(page);
         }
     }

@@ -1,9 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage
-    x:Class="Rocket.WatchOrganizer.UI.Popup.Season.PopupDeleteSeason"
+﻿<pages:PopupPage
+    x:Class="Rocket.WatchOrganizer.UI.Popup.DefaultPopup"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
@@ -33,13 +31,14 @@
                     BackgroundColor="#652CB3" />
 
                 <Label
+                    x:Name="labelMessage"
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
                     Margin="0,0,0,10"
                     FontSize="17"
                     HorizontalTextAlignment="Center"
                     Style="{StaticResource LabelNunitoBold}"
-                    Text="Deseja realmente excluir a Temporada?"
+                    Text=""
                     TextColor="#808080" />
 
                 <Button

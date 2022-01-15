@@ -13,9 +13,10 @@ namespace Rocket.WatchOrganizer.UI.Popup.Episode
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopupAddEpisode : PopupPage
     {
-        public PopupAddEpisode()
+        public PopupAddEpisode(string message)
         {
             InitializeComponent();
+            label1.Text = message;
         }
         // Invoked when a hardware back button is pressed
         protected override bool OnBackButtonPressed()

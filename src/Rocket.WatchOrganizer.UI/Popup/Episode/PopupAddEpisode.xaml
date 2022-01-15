@@ -36,12 +36,13 @@
                     BackgroundColor="#652CB3" />
 
                 <Label
+                    x:Name="label1"
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
                     FontSize="17"
                     HorizontalTextAlignment="Center"
                     Style="{StaticResource LabelNunitoBold}"
-                    Text="Adicionar Episódio"
+                    Text=""
                     TextColor="#808080" />
 
                 <input:AdvancedEntry
