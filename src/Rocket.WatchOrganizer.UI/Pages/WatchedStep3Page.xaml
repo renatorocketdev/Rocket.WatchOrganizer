@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
     xmlns:viewModels="clr-namespace:Rocket.WatchOrganizer.Core.ViewModels.Watched;assembly=Rocket.WatchOrganizer.Core"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
@@ -273,36 +274,79 @@
                         <AbsoluteLayout
                             Grid.Row="2"
                             Grid.RowSpan="2"
-                            Margin="10"
+                            Grid.ColumnSpan="2"
+                            Margin="0"
+                            Padding="15"
                             HorizontalOptions="End"
                             VerticalOptions="End">
-                            <yummy:PancakeView CornerRadius="5">
+                            <yummy:PancakeView CornerRadius="40">
+                                <yummy:PancakeView.BackgroundGradientStops>
+                                    <yummy:GradientStopCollection>
+                                        <yummy:GradientStop Offset="0.0" Color="#7c4ed9" />
+                                        <yummy:GradientStop Offset="0.4" Color="#672be0" />
+                                        <yummy:GradientStop Offset="0.8" Color="#5512de" />
+                                        <yummy:GradientStop Offset="1.0" Color="#4A00E0" />
+                                    </yummy:GradientStopCollection>
+                                </yummy:PancakeView.BackgroundGradientStops>
+
                                 <yummy:PancakeView.Shadow>
-                                    <yummy:DropShadow Offset="2,2" Color="#000000" />
+                                    <yummy:DropShadow Offset="0.5,0.5" Color="#222" />
                                 </yummy:PancakeView.Shadow>
 
-                                <!--  Add Season Button  -->
-                                <Button
-                                    Padding="0"
-                                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
-                                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                                    CornerRadius="30"
-                                    FontSize="32"
-                                    HeightRequest="45"
-                                    Style="{StaticResource LabelMaterialIconsRegular}"
-                                    Text="&#xe145;"
-                                    TextColor="#FFF"
-                                    WidthRequest="45">
+                                <extensions:Expander
+                                    HorizontalOptions="Start"
+                                    Rotation="180"
+                                    VerticalOptions="End">
+                                    <extensions:Expander.Header>
+                                        <Label
+                                            Grid.Row="0"
+                                            Margin="0"
+                                            FontSize="23"
+                                            HeightRequest="40"
+                                            HorizontalTextAlignment="Center"
+                                            Style="{StaticResource LabelMaterialIconsRegular}"
+                                            Text="&#xe5cf;"
+                                            TextColor="#FFF"
+                                            VerticalTextAlignment="Center"
+                                            WidthRequest="40">
 
-                                    <Button.Background>
-                                        <LinearGradientBrush EndPoint="1,0">
-                                            <GradientStop Offset="0.1" Color="#7c4ed9" />
-                                            <GradientStop Offset="0.4" Color="#672be0" />
-                                            <GradientStop Offset="0.8" Color="#5512de" />
-                                            <GradientStop Offset="1.0" Color="#4A00E0" />
-                                        </LinearGradientBrush>
-                                    </Button.Background>
-                                </Button>
+                                            <Label.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding Source={RelativeSource AncestorType={x:Type extensions:Expander}}, Path=IsExpanded}"
+                                                    TargetType="Label"
+                                                    Value="True">
+                                                    <Setter Property="Text" Value="&#xe5cd;" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </extensions:Expander.Header>
+
+                                    <StackLayout Margin="3,0,3,10" Spacing="5">
+                                        <!--  Add Season Button  -->
+                                        <Button
+                                            Padding="0"
+                                            BackgroundColor="#FFF"
+                                            CornerRadius="30"
+                                            FontSize="20"
+                                            HeightRequest="35"
+                                            Style="{StaticResource LabelMaterialIconsRegular}"
+                                            Text="&#xe145;"
+                                            TextColor="#25004f"
+                                            WidthRequest="35" />
+
+                                        <!--  Add Multiple Season Button  -->
+                                        <Button
+                                            Padding="0"
+                                            BackgroundColor="#FFF"
+                                            CornerRadius="30"
+                                            FontSize="20"
+                                            HeightRequest="35"
+                                            Style="{StaticResource LabelMaterialIconsRegular}"
+                                            Text="&#xe5cd;"
+                                            TextColor="#25004f"
+                                            WidthRequest="35" />
+                                    </StackLayout>
+                                </extensions:Expander>
                             </yummy:PancakeView>
                         </AbsoluteLayout>
                     </Grid>

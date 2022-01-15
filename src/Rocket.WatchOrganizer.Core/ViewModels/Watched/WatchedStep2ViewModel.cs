@@ -108,7 +108,7 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
 
         public async Task OpenPopupAsync()
         {
-            await PopupNavigation.Instance.PushAsync(new PopupAddSeason);
+
         }
 
         private async Task AddSeasonAsync()
