@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
 
@@ -6,8 +8,15 @@ namespace Rocket.WatchOrganizer.Core.Models
 {
     public class Serie
     {
+        public Serie()
+        {
+            IdProprio = Guid.NewGuid();
+        }
+
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+
+        public Guid IdProprio { get; set; }
 
         public string Titulo { get; set; }
 
@@ -16,6 +25,7 @@ namespace Rocket.WatchOrganizer.Core.Models
         public string Icone { get; set; }
 
         [OneToMany("IdSerie", "FK_Season_Serie")]
-        public List<Season> Seasons { get; set; }
+        public ObservableCollection<Season> Seasons { get; set; }
+
     }
 }

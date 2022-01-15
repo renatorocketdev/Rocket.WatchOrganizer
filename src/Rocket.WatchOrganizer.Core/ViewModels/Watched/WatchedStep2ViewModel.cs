@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using Acr.UserDialogs;
-using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
-using Newtonsoft.Json;
-using Rg.Plugins.Popup.Services;
 using Rocket.WatchOrganizer.Core.Models;
 using Rocket.WatchOrganizer.Core.Service;
 
@@ -28,24 +24,7 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
             }
         }
 
-        private List<Season> _seasons;
-        public List<Season> Seasons
-        {
-            get => _seasons;
-            set
-            {
-                _seasons = value;
-                RaisePropertyChanged(() => Seasons);
-            }
-        }
-
         #endregion
-
-        private MvxInteraction<Season> _interaction =
-            new MvxInteraction<Season>();
-
-        // need to expose it as a public property for binding (only IMvxInteraction is needed in the view)
-        public IMvxInteraction<Season> Interaction => _interaction;
 
         private readonly IMvxNavigationService _navigationService;
         private readonly SeasonService _service;
@@ -72,43 +51,54 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
 
         public void GetSeasonListAsync()
         {
-            Seasons = new List<Season>
+            _serie.Seasons = new ObservableCollection<Season>
             {
                 new Season
                 {
-                    Titulo = "Temporada 1", 
+                    IdProprio = Guid.NewGuid(),
+                    Titulo = "Bem vindo ao Lar", 
                 },
                 new Season
                 {
-                    Titulo = "Temporada 2",
+                    IdProprio = Guid.NewGuid(),
+                    Titulo = "Longe de Casa",
                 },
                 new Season
                 {
-                    Titulo = "Temporada 3",
-                },
-                new Season
-                {
-                    Titulo = "Temporada 4",
+                    IdProprio = Guid.NewGuid(),
+                    Titulo = "Sem Volta Para Casa",
                 }
             };
         }
 
-        public IMvxAsyncCommand AddSeasonCommand => new MvxAsyncCommand(async () => await AddSeasonAsync());
+    
         public IMvxAsyncCommand BackNavigationCommand => new MvxAsyncCommand(async () => await BackNavigationAsync());
-        public IMvxAsyncCommand ShowAddEpisodeCommand => new MvxAsyncCommand(async () => await ShowAddEpisodeAsync());
-
         public async Task BackNavigationAsync()
         {
             await _navigationService.Close(this);
         }
-        public async Task ShowAddEpisodeAsync()
+
+        public IMvxAsyncCommand<Season> ShowAddEpisodeCommand => new MvxAsyncCommand<Season>(async (season) => await ShowAddEpisodeAsync(season));
+        public async Task ShowAddEpisodeAsync(Season season)
         {
-            await _navigationService.Navigate<WatchedStep3ViewModel>();
+            season.TituloSerie = _serie.Titulo;
+
+            var result = await _navigationService.Navigate<WatchedStep3ViewModel, Season, Season>(season);
+            if (result != null)
+            {
+                _serie.Seasons.Add(result);
+            }
         }
 
-        private async Task AddSeasonAsync()
+        public IMvxCommand<Season> DeleteSeasonCommand => new MvxCommand<Season>((season) => DeleteSeason(season));
+        public void DeleteSeason(Season season)
         {
-            var result = await Mvx.IoCProvider.Resolve<IUserDialogs>().PromptAsync("Título Temporada");
+            _serie.Seasons.Remove(season);
+        }
+
+        public async Task OpenPopupAsync()
+        {
+            
         }
     }
 }

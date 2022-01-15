@@ -1,9 +1,6 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
-using Newtonsoft.Json;
 using Rocket.WatchOrganizer.Core.Models;
 
 namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
@@ -30,23 +27,17 @@ namespace Rocket.WatchOrganizer.Core.ViewModels.Watched
         public WatchedStep1ViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
-        }
-
-        public override void Prepare()
-        {
-            base.Prepare();
 
             Serie = new Serie();
         }
-
+        
         public IMvxAsyncCommand BackNavigationCommand => new MvxAsyncCommand(async () => await BackNavigationAsync());
-        public IMvxAsyncCommand ShowNextStepCommand => new MvxAsyncCommand(async () => await ShowNextStepAsync());
-
         public async Task BackNavigationAsync()
         {
             await _navigationService.Close(this);
         }
 
+        public IMvxAsyncCommand ShowNextStepCommand => new MvxAsyncCommand(async () => await ShowNextStepAsync());
         public async Task ShowNextStepAsync()
         {
             await _navigationService.Navigate<WatchedStep2ViewModel, Serie>(_serie);
