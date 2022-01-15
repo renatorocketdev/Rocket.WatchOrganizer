@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
@@ -9,12 +10,14 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopupAddSeason : PopupPage
     {
+        public event PropertyChangedEventHandler Propertychanged;
         public event EventHandler<object> CallbackEvent;
 
         public PopupAddSeason(string message)
         {
             InitializeComponent();
             label1.Text = message;
+            LblText = "teste";
         }
 
         // Invoked when a hardware back button is pressed
@@ -46,7 +49,23 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
         {
             CallbackEvent?.Invoke(this, Season);
 
+            Season = new Core.Models.Season
+            {
+                Titulo = LblText
+            };
+
             await PopupNavigation.Instance.PopAsync();
+        }
+
+        private string _lblText;
+        public string LblText
+        {
+            get => _lblText;
+            set
+            {
+                _lblText = value;
+                OnPropertyChanged();
+            }
         }
     }
 }

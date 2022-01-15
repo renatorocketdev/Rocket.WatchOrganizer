@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
 using Rg.Plugins.Popup.Services;
+using Rocket.WatchOrganizer.Core.Models;
 using Rocket.WatchOrganizer.Core.ViewModels.Watched;
 using Rocket.WatchOrganizer.UI.Popup;
 using Rocket.WatchOrganizer.UI.Popup.Season;
@@ -40,7 +41,7 @@ namespace Rocket.WatchOrganizer.UI.Pages
 
         private void CallbackMethod(object sender, object e)
         {
-            ViewModel.Serie.Banner = e.ToString();
+            ViewModel.Serie.Seasons.Add((e as Season));
         }
 
         public async Task OpenEditPopupAsync()
