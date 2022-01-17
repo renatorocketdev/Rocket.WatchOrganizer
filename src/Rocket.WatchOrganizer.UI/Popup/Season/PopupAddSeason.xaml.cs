@@ -13,11 +13,18 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
         public event PropertyChangedEventHandler Propertychanged;
         public event EventHandler<object> CallbackEvent;
 
-        public PopupAddSeason(string message)
+        public PopupAddSeason(Core.Models.Season season = null)
         {
             InitializeComponent();
-            label1.Text = message;
-            LblText = "teste";
+
+            if (season == null)
+            {
+                Season = new Core.Models.Season();
+            }
+            else
+            {
+                Season = season;
+            }
         }
 
         // Invoked when a hardware back button is pressed
@@ -38,34 +45,32 @@ namespace Rocket.WatchOrganizer.UI.Popup.Season
         {
             await ClosePopupAsync();
         }
+
         public async Task ClosePopupAsync()
         {
             await PopupNavigation.Instance.PopAsync();
         }
 
         public Core.Models.Season Season { get; set; }
+        public string _popupTitle
+        {
+            get
+            {
+                if (Season == null)
+                {
+                    return "Adicionar Temporada";
+                }
+                else
+                {
+                    return "Editar Temporada";
+                }
+            }
+        }
 
         private async void Button_ClickedAsync(object sender, EventArgs e)
         {
-            CallbackEvent?.Invoke(this, Season);
-
-            Season = new Core.Models.Season
-            {
-                Titulo = LblText
-            };
-
+            CallbackEvent?.Invoke(this, Season);            
             await PopupNavigation.Instance.PopAsync();
-        }
-
-        private string _lblText;
-        public string LblText
-        {
-            get => _lblText;
-            set
-            {
-                _lblText = value;
-                OnPropertyChanged();
-            }
         }
     }
 }

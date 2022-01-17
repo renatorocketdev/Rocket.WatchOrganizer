@@ -17,7 +17,7 @@
         VerticalOptions="Center">
 
         <StackLayout BackgroundColor="#FFF">
-            <Grid>
+            <Grid BindingContext="{x:Reference Name=MyPage}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15" />
                     <RowDefinition Height="Auto" />
@@ -37,13 +37,12 @@
                     BackgroundColor="#652CB3" />
 
                 <Label
-                    x:Name="label1"
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
                     FontSize="17"
                     HorizontalTextAlignment="Center"
                     Style="{StaticResource LabelNunitoBold}"
-                    Text=""
+                    Text="{Binding _popupTitle}"
                     TextColor="#808080" />
 
                 <input:AdvancedEntry
@@ -51,7 +50,6 @@
                     Grid.ColumnSpan="2"
                     Margin="10,5,10,0"
                     AnnotationColor="Accent"
-                    BindingContext="{x:Reference Name=MyPage}"
                     BorderColor="#CCC"
                     CornerRadius="5"
                     FontFamily="Nunito-Regular"
@@ -60,7 +58,7 @@
                     MinLength="5"
                     Placeholder="Título da Temporada"
                     PlaceholderColor="#CCC"
-                    Text="{Binding LblText}"
+                    Text="{Binding Season.Titulo}"
                     TextColor="#333"
                     TextFontSize="17" />
 
@@ -76,13 +74,12 @@
 
                     <local1:CustomEditor
                         Margin="5,0,0,0"
-                        BindingContext="{x:Reference Name=MyPage}"
                         FontFamily="Nunito-Regular"
                         FontSize="17"
                         HeightRequest="120"
                         Placeholder="Descrição da Temporada"
                         PlaceholderColor="#CCC"
-                        Text="{Binding LblText}" />
+                        Text="{Binding Season.Descricao}" />
                 </yummy:PancakeView>
 
                 <Button

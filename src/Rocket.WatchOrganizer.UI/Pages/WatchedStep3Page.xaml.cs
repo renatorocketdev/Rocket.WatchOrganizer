@@ -42,7 +42,7 @@ namespace Rocket.WatchOrganizer.UI.Pages
         }
         public async Task OpenDeletePopupAsync()
         {
-            var page = new DefaultPopup("Deletar Episódio");
+            var page = new DefaultConfirmPopup("Deletar Episódio", 1);
             await PopupNavigation.Instance.PushAsync(page);
         }
     }
